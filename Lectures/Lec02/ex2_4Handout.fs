@@ -11,11 +11,12 @@ let sinstrToInt = function
   | SPop    -> [5]
   | SSwap   -> [6]
 
-let assemble (sinstrs : list<sinstr>) : list<int> =
-  List.fold(fun acc elem ->  acc @ (elem |> sinstrToInt)) [] sinstrs;;
-
+let assemble (sinstrs : list<sinstr>) : unit =
+  let dugeklat = List.fold(fun acc elem ->  acc @ (elem |> sinstrToInt)) [] sinstrs
+  intsToFile dugeklat"is1.txt"
 (* Output the integers in list inss to the text file called fname: *)
 
 let intsToFile (inss : int list) (fname : string) = 
     let text = String.concat " " (List.map string inss)
     System.IO.File.WriteAllText(fname, text);;
+
