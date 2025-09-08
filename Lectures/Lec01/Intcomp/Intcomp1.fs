@@ -356,7 +356,7 @@ type sinstr =
   | SMul                                (* pop args, push product *)
   | SPop                                (* pop value/unbind var   *)
   | SSwap;;                             (* exchange top and next  *)
- 
+
 let rec seval (inss : sinstr list) (stack : int list) =
     match (inss, stack) with
     | ([], v :: _) -> v

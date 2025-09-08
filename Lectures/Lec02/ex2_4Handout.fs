@@ -4,14 +4,15 @@ module handout
 open Intcomp1
 let sinstrToInt = function
   | SCstI i -> [0;i]
-  | SVar i  -> failwith "Not implemented"
-  | SAdd    -> failwith "Not implemented"
-  | SSub    -> failwith "Not implemented"
-  | SMul    -> failwith "Not implemented"
-  | SPop    -> failwith "Not implemented"
-  | SSwap   -> failwith "Not implemented"
+  | SVar i  -> [1;i]
+  | SAdd    -> [2]
+  | SSub    -> [3]
+  | SMul    -> [4]
+  | SPop    -> [5]
+  | SSwap   -> [6]
 
-let assemble instrs = failwith "Not implemented"
+let assemble (sinstrs : list<sinstr>) : list<int> =
+  List.fold(fun acc elem ->  acc @ (elem |> sinstrToInt)) [] sinstrs;;
 
 (* Output the integers in list inss to the text file called fname: *)
 
