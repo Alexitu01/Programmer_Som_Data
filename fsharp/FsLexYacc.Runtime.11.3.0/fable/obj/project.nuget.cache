@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XSJhVJYyIwA=",
+  "dgSpecHash": "fz5ZRAPtk7k=",
   "success": true,
-  "projectFilePath": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\ITU-Work\\5. Semester\\BPRD\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\FsLexYacc.Runtime.fsproj",
+  "projectFilePath": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\FsLexYacc.Runtime.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\simun\\.nuget\\packages\\fsharp.core\\9.0.201\\fsharp.core.9.0.201.nupkg.sha512",
     "C:\\Users\\simun\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

@@ -1,0 +1,5 @@
+C:\Users\simun\Desktop\Simun\ITU\Programmer_Som_Data\fsharp\FsLexYacc.Runtime.11.3.0\fable\obj\Debug\netstandard2.0\FsLexYacc.Runtime.fsproj.AssemblyReference.cache
+C:\Users\simun\Desktop\Simun\ITU\Programmer_Som_Data\fsharp\FsLexYacc.Runtime.11.3.0\fable\obj\Debug\netstandard2.0\FsLexYacc.Runtime.AssemblyInfoInputs.cache
+C:\Users\simun\Desktop\Simun\ITU\Programmer_Som_Data\fsharp\FsLexYacc.Runtime.11.3.0\fable\obj\Debug\netstandard2.0\FsLexYacc.Runtime.AssemblyInfo.fs
+C:\Users\simun\Desktop\Simun\ITU\Programmer_Som_Data\fsharp\FsLexYacc.Runtime.11.3.0\fable\obj\Debug\netstandard2.0\FsLexYacc.Runtime.fsproj.CoreCompileInputs.cache
+C:\Users\simun\Desktop\Simun\ITU\Programmer_Som_Data\fsharp\FsLexYacc.Runtime.11.3.0\fable\obj\Debug\netstandard2.0\FsLexYacc.Runtime.sourcelink.json

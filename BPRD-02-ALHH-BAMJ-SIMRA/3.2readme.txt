@@ -1,0 +1,4 @@
+Assignment 3.2 
+Regex: 
+(b|ab)*a?
+

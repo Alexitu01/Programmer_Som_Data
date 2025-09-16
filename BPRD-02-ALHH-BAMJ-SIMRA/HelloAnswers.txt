@@ -1,0 +1,44 @@
+1 - Read the specification hello.fsl. 
+What are the regular expressions involved, and 
+which semantic values are they associated 
+with?
+
+    rule a : ['0'-'9'] = regex [0-9] = positive integers
+    rule b : _ = regex (.) = anything else / wildcard
+
+2 - Generate the lexer out of the specification using a 
+command prompt. Which additional file is generated 
+during the process?
+How many states are there by the automaton of the 
+lexer?
+    
+    hello.fsi
+    3 - a starting state and one state each for passing either the integer rule or the wildcard rule
+
+6 - Consider the 3 examples of input provided at the prompt and 
+the result.
+Explain why the results are expected behaviour from the lexer.
+
+"% dotnet bin/Debug/net8.0/hello3.dll
+Hello World from FsLex!
+Please pass a digit:
+34
+The lexer recognizes 34
+% dotnet bin/Debug/net8.0/hello3.dll
+Hello World from FsLex!
+Please pass a digit:
+34.24
+The lexer recognizes 34.24
+% dotnet bin/Debug/net8.0/hello3.dll
+Hello World from FsLex!
+Please pass a digit:
+34,34
+The lexer recognizes 34
+%"
+
+    The lexer recognizes "34" because of the "['0'-'9']+" group that accepts a stream of integers.
+
+    The lexer recognizes "34.24" because of the "(['0'-'9']*['.'])?['0'-'9']+" group where a stream of integers
+    can be preceded by a decimal point which in turn is preceded by 0 or more integers.
+
+    The lexer recognizes "34,34" as "34" because "," is not accepted by the first rule and as such passes to the wildcard.

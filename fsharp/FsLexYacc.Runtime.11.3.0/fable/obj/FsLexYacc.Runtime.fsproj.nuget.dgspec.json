@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\simun\\Desktop\\Simun\\ITU\\ITU-Work\\5. Semester\\BPRD\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\FsLexYacc.Runtime.fsproj": {}
+    "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\FsLexYacc.Runtime.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\simun\\Desktop\\Simun\\ITU\\ITU-Work\\5. Semester\\BPRD\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\FsLexYacc.Runtime.fsproj": {
+    "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\FsLexYacc.Runtime.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\ITU-Work\\5. Semester\\BPRD\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\FsLexYacc.Runtime.fsproj",
+        "projectUniqueName": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\FsLexYacc.Runtime.fsproj",
         "projectName": "FsLexYacc.Runtime",
-        "projectPath": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\ITU-Work\\5. Semester\\BPRD\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\FsLexYacc.Runtime.fsproj",
+        "projectPath": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\FsLexYacc.Runtime.fsproj",
         "packagesPath": "C:\\Users\\simun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\ITU-Work\\5. Semester\\BPRD\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\obj\\",
+        "outputPath": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\simun\\AppData\\Roaming\\NuGet\\NuGet.Config"
