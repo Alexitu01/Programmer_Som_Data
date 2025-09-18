@@ -10,6 +10,9 @@ type token =
   | IN
   | LET
   | COMMA
+  | IF
+  | THEN
+  | ELSE
   | PLUS
   | MINUS
   | TIMES
@@ -28,6 +31,9 @@ type tokenId =
     | TOKEN_IN
     | TOKEN_LET
     | TOKEN_COMMA
+    | TOKEN_IF
+    | TOKEN_THEN
+    | TOKEN_ELSE
     | TOKEN_PLUS
     | TOKEN_MINUS
     | TOKEN_TIMES

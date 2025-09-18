@@ -9,7 +9,7 @@
 %token <int> CSTINT
 %token <string> NAME
 %token PLUS MINUS TIMES DIVIDE EQ MAX
-%token END IN LET COMMA
+%token END IN LET COMMA IF THEN ELSE
 %token LPAR RPAR LBRA RBRA
 %token EOF
 
@@ -32,6 +32,7 @@ Expr:
   | LPAR Expr RPAR                      { $2                  }
   | LBRA Expr RBRA                      { $2                  }
   | LET NAME EQ Expr IN Expr END        { Let($2, $4, $6)     }
+  | IF Expr THEN Expr ELSE Expr         { If($2, $4, $6)      }
   | MAX LPAR Expr COMMA Expr RPAR       { Prim("max", $3, $5) }
   | Expr DIVIDE Expr                    { Prim("/", $1, $3)   }
   | Expr TIMES Expr                     { Prim("*", $1, $3)   }

@@ -18,6 +18,9 @@ let keyword s =
     match s with
     | "<-"  -> EQ
     | "in"  -> IN
+    | "if"  -> IF
+    | "then" -> THEN
+    | "else" -> ELSE
     | "max" -> MAX
     | _     -> NAME s
 }
