@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("hello2")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32f91ed5062ceab7855706faff37f44b7de8a845")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74c6ce10f468fd9f3a5838528897db4581b07240")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("hello2")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("hello2")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]

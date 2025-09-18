@@ -1,0 +1,14 @@
+Assignment 3.3
+    Main
+    => Expr EOF (A)
+    => let NAME = Expr in Expr end EOF (F)
+    => let NAME = Expr in Expr * Expr end EOF (G)
+    => let NAME = Expr in Expr * 3 end EOF (C)
+    => let NAME = Expr in Expr + Expr * CSTINT end EOF (H)
+    => let NAME = Expr in Expr + CSTINT * CSTINT end EOF (C)
+    => let NAME = Expr in NAME + CSTINT * CSTINT end EOF (B)
+    => let NAME = (Expr) in NAME + CSTINT * CSTINT end EOF (E)
+    => let NAME = (CSTINT) in NAME + CSTINT * CSTINT end EOF (C)
+
+    let z = ( 17 ) in z + 2 * 3 end EOF
+
