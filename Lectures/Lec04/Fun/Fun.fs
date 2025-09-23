@@ -24,7 +24,7 @@ let rec lookup env x =
 
 type value = 
   | Int of int
-  | Closure of string * string * expr * value env       (* (f, x, fBody, fDeclEnv) *)
+  | Closure of string * string list * expr * value env       (* (f, x, fBody, fDeclEnv) *)
 
 let rec eval (e : expr) (env : value env) : int =
     match e with 
@@ -52,16 +52,22 @@ let rec eval (e : expr) (env : value env) : int =
       let b = eval e1 env
       if b<>0 then eval e2 env
       else eval e3 env
+
+
     | Letfun(f, x, fBody, letBody) -> 
       let bodyEnv = (f, Closure(f, x, fBody, env)) :: env 
       eval letBody bodyEnv
+
+
+
     | Call(Var f, eArg) -> 
       let fClosure = lookup env f
       match fClosure with
       | Closure (f, x, fBody, fDeclEnv) ->
-        let xVal = Int(eval eArg env)
-        let fBodyEnv = (x, xVal) :: (f, fClosure) :: fDeclEnv
+        let xValues = List.fold(fun acc elem -> Int(eval elem env) :: acc) [] eArg
+        let fBodyEnv = List.zip x xValues @ [(f, fClosure)] @ fDeclEnv
         eval fBody fBodyEnv
+
       | _ -> failwith "eval Call: not a function"
     | Call _ -> failwith "eval Call: not first-order function"
 
@@ -71,7 +77,7 @@ let run e = eval e [];;
 
 
 (* Examples in abstract syntax *)
-
+(*
 let ex1 = Letfun("f1", "x", Prim("+", Var "x", CstI 1), 
                  Call(Var "f1", CstI 12));;
 
@@ -136,6 +142,14 @@ let sumpower = Letfun("sum", "n",
                       Prim("+", Call(Var "power", Var "n"), Call(Var "sum", Prim("-", Var "n", CstI 1)))),
                         Call(Var "sum", Var "n"))
 
-let power8  =  
+//Look at it, and cry... 
+let power8  =  Letfun("power8", "n",
+                      If(
+                      Prim("=", Var "n", CstI 0),
+                      CstI 0,
+                      Prim("+", Prim("*", Var "n",  Prim("*", Var "n", Prim("*", Var "n", Prim("*", Var "n", Prim("*", Var "n", Prim("*", Var "n", Prim("*", Var "n", Var"n"))))))),
+                      Call(Var "power8", Prim("-", Var "n", CstI 1)))),
+                      Call(Var "power8", Var "n"))
 
 
+*)
