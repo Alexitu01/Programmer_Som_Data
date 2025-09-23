@@ -115,9 +115,27 @@ let ex5 =
                           Call(Var "fib", Prim("-", Var "n", CstI 2))),
                      CstI 1), Call(Var "fib", CstI 25)));;
                      
-
-let dummysummy = Letfun("sum", "n", 
+//Sum
+let sum = Letfun("sum", "n", 
                       If(Prim("=", Var "n", CstI 0),
                       CstI 0,
                       Prim("+", Var "n", Call(Var "sum", Prim("-", Var "n", CstI 1)))),
                         Call(Var "sum", Var "n"))
+
+//Power
+let power = Letfun("power", "n", 
+                      If(Prim("=", Var "n", CstI 0), CstI 1, If(Prim("=", Var "n", CstI 1), 
+                      CstI 3, 
+                      Prim("*", CstI 3, Call(Var "power", Prim("-", Var "n", CstI 1))))), Call(Var "power", Var "n"))
+
+
+//The idea behind this function, is that you call it with "eval sumpower [("n", (Int) 4);("power", (Closure) ("power", "n", power, []))];; " --> Use closure to define "power".
+let sumpower = Letfun("sum", "n", 
+                      If(Prim("=", Var "n", CstI 0),
+                      CstI 1,
+                      Prim("+", Call(Var "power", Var "n"), Call(Var "sum", Prim("-", Var "n", CstI 1)))),
+                        Call(Var "sum", Var "n"))
+
+let power8  =  
+
+
