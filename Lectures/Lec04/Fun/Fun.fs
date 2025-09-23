@@ -67,7 +67,8 @@ let rec eval (e : expr) (env : value env) : int =
 
 (* Evaluate in empty environment: program must have no free variables: *)
 
-let run e = eval e [];;
+let run e = eval e [];; 
+
 
 (* Examples in abstract syntax *)
 
@@ -76,7 +77,7 @@ let ex1 = Letfun("f1", "x", Prim("+", Var "x", CstI 1),
 
 (* Example: factorial *)
 
-let ex2 = Letfun("fac", "x",
+let ex2  = Letfun("fac", "x",
                  If(Prim("=", Var "x", CstI 0),
                     CstI 1,
                     Prim("*", Var "x", 
@@ -114,3 +115,9 @@ let ex5 =
                           Call(Var "fib", Prim("-", Var "n", CstI 2))),
                      CstI 1), Call(Var "fib", CstI 25)));;
                      
+
+let dummysummy = Letfun("sum", "n", 
+                      If(Prim("=", Var "n", CstI 0),
+                      CstI 0,
+                      Prim("+", Var "n", Call(Var "sum", Prim("-", Var "n", CstI 1)))),
+                        Call(Var "sum", Var "n"))
