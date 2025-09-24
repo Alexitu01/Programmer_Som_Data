@@ -52,9 +52,12 @@ let rec eval (e : expr) (env : value env) : int =
       let b = eval e1 env
       if b<>0 then eval e2 env
       else eval e3 env
+
+
     | Letfun(f, x, fBody, letBody) -> 
       let bodyEnv = (f, Closure(f, x, fBody, env)) :: env 
       eval letBody bodyEnv
+
     | Call(Var f, eArg) -> 
       let fClosure = lookup env f
       match fClosure with
@@ -62,6 +65,7 @@ let rec eval (e : expr) (env : value env) : int =
         let xValues = List.rev (List.fold(fun acc elem ->  Int (eval elem env) :: acc) [] eArg)
         let fBodyEnv = (List.zip x xValues @ [(f, fClosure)]) @ fDeclEnv
         eval fBody fBodyEnv
+
       | _ -> failwith "eval Call: not a function"
     | Call _ -> failwith "eval Call: not first-order function"
 
@@ -115,20 +119,20 @@ let ex5 =
                           Call(Var "fib", [Prim("-", Var "n", CstI 2)])),
                      CstI 1), Call(Var "fib", [CstI 25])));;
                      
-//Sum function for 4.2
+//Sum
 let sum = Letfun("sum", ["n"], 
                       If(Prim("=", Var "n", CstI 0),
                       CstI 0,
                       Prim("+", Var "n", Call(Var "sum", [Prim("-", Var "n", CstI 1)]))),
                         Call(Var "sum", [Var "n"]))
 
-//Power function for 4.2
+//Power
 let power = Letfun("power", ["n"], 
                       If(Prim("=", Var "n", CstI 0), CstI 1, If(Prim("=", Var "n", CstI 1), 
                       CstI 3, 
                       Prim("*", CstI 3, Call(Var "power", [Prim("-", Var "n", CstI 1)])))), Call(Var "power", [Var "n"]))
 
-//Sum and Power function for 4.2
+
 //The idea behind this function, is that you call it with "eval sumpower [("n", (Int) 4);("power", (Closure) ("power", "n", power, []))];; " --> Use closure to define "power".
 let sumpower = Letfun("sum", ["n"], 
                       If(Prim("=", Var "n", CstI 0),
@@ -136,7 +140,6 @@ let sumpower = Letfun("sum", ["n"],
                       Prim("+", Call(Var "power", [Var "n"]), Call(Var "sum", [Prim("-", Var "n", CstI 1)]))),
                         Call(Var "sum", [Var "n"]))
 
-//Naive implementation of x^8 function
 (*
 let power8  =  Letfun("power8", ["n"],
                       If(
@@ -158,10 +161,3 @@ let power8 = Letfun("p8", ["n"],
                             Prim("*", Var "n", Call(Var "aux", [Prim("-", Var "k", CstI 1)]))),
                           Call(Var "aux", [CstI 8])),
                           Call(Var "p8", [Var "n"]))
-
-let power8sum = Letfun("p8s", ["n"],
-                        If(Prim("=", Var "n", CstI 0),
-                          CstI 0,
-                          Prim("+", Call(Var "p8", [Var "n"]), Call(Var "p8s", [Prim("-", Var "n", CstI 1)])))),
-                        Call(Var "sumPow8", [Var "n"]))
-
