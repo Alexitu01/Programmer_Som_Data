@@ -277,25 +277,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\simun\\.nuget\\packages\\": {}
+    "/Users/alexholst/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\FsLexYacc.Runtime.fsproj",
+      "projectUniqueName": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/fsharp/FsLexYacc.Runtime.11.3.0/fable/FsLexYacc.Runtime.fsproj",
       "projectName": "FsLexYacc.Runtime",
-      "projectPath": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\FsLexYacc.Runtime.fsproj",
-      "packagesPath": "C:\\Users\\simun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\fsharp\\FsLexYacc.Runtime.11.3.0\\fable\\obj\\",
+      "projectPath": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/fsharp/FsLexYacc.Runtime.11.3.0/fable/FsLexYacc.Runtime.fsproj",
+      "packagesPath": "/Users/alexholst/.nuget/packages/",
+      "outputPath": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/fsharp/FsLexYacc.Runtime.11.3.0/fable/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\simun\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/alexholst/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files\\dotnet\\sdk\\9.0.200\\FSharp\\library-packs": {},
+        "/usr/local/share/dotnet/sdk/9.0.200/FSharp/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -340,7 +340,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/RuntimeIdentifierGraph.json"
       }
     }
   }
