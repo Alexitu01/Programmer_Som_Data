@@ -62,7 +62,7 @@ let rec eval (e : expr) (env : value env) : int =
       let fClosure = lookup env f
       match fClosure with
       | Closure (f, x, fBody, fDeclEnv) ->
-        let xValues = (List.fold(fun acc elem ->  Int (eval elem env) :: acc) [] eArg)
+        let xValues = List.rev (List.fold(fun acc elem ->  Int (eval elem env) :: acc) [] eArg)
         let fBodyEnv = (List.zip x xValues @ [(f, fClosure)]) @ fDeclEnv
         eval fBody fBodyEnv
 
@@ -75,29 +75,29 @@ let run e = eval e [];;
 
 
 (* Examples in abstract syntax *)
-(*
-let ex1 = Letfun("f1", "x", Prim("+", Var "x", CstI 1), 
-                 Call(Var "f1", CstI 12));;
+
+let ex1 = Letfun("f1", ["x"], Prim("+", Var "x", CstI 1), 
+                 Call(Var "f1", [CstI 12]));;
 
 (* Example: factorial *)
 
-let ex2  = Letfun("fac", "x",
+let ex2  = Letfun("fac", ["x"],
                  If(Prim("=", Var "x", CstI 0),
                     CstI 1,
                     Prim("*", Var "x", 
                               Call(Var "fac", 
-                                   Prim("-", Var "x", CstI 1)))),
-                 Call(Var "fac", Var "n"));;
+                                   [Prim("-", Var "x", CstI 1)]))),
+                 Call(Var "fac", [Var "n"]));;
 
 (* let fac10 = eval ex2 [("n", Int 10)];; *)
 
 (* Example: deep recursion to check for constant-space tail recursion *)
 
-let ex3 = Letfun("deep", "x", 
+let ex3 = Letfun("deep", ["x"], 
                  If(Prim("=", Var "x", CstI 0),
                     CstI 1,
-                    Call(Var "deep", Prim("-", Var "x", CstI 1))),
-                 Call(Var "deep", Var "count"));;
+                    Call(Var "deep", [Prim("-", Var "x", CstI 1)])),
+                 Call(Var "deep", [Var "count"]));;
     
 let rundeep n = eval ex3 [("count", Int n)];;
 
@@ -105,58 +105,59 @@ let rundeep n = eval ex3 [("count", Int n)];;
 
 let ex4 =
     Let("y", CstI 11,
-        Letfun("f", "x", Prim("+", Var "x", Var "y"),
-               Let("y", CstI 22, Call(Var "f", CstI 3))));;
+        Letfun("f", ["x"], Prim("+", Var "x", Var "y"),
+               Let("y", CstI 22, Call(Var "f", [CstI 3]))));;
 
 (* Example: two function definitions: a comparison and Fibonacci *)
 
 let ex5 = 
-    Letfun("ge2", "x", Prim("<", CstI 1, Var "x"),
-           Letfun("fib", "n",
-                  If(Call(Var "ge2", Var "n"),
+    Letfun("ge2", ["x"], Prim("<", CstI 1, Var "x"),
+           Letfun("fib", ["n"],
+                  If(Call(Var "ge2", [Var "n"]),
                      Prim("+",
-                          Call(Var "fib", Prim("-", Var "n", CstI 1)),
-                          Call(Var "fib", Prim("-", Var "n", CstI 2))),
-                     CstI 1), Call(Var "fib", CstI 25)));;
+                          Call(Var "fib", [Prim("-", Var "n", CstI 1)]),
+                          Call(Var "fib", [Prim("-", Var "n", CstI 2)])),
+                     CstI 1), Call(Var "fib", [CstI 25])));;
                      
 //Sum
-let sum = Letfun("sum", "n", 
+let sum = Letfun("sum", ["n"], 
                       If(Prim("=", Var "n", CstI 0),
                       CstI 0,
-                      Prim("+", Var "n", Call(Var "sum", Prim("-", Var "n", CstI 1)))),
-                        Call(Var "sum", Var "n"))
+                      Prim("+", Var "n", Call(Var "sum", [Prim("-", Var "n", CstI 1)]))),
+                        Call(Var "sum", [Var "n"]))
 
 //Power
-let power = Letfun("power", "n", 
+let power = Letfun("power", ["n"], 
                       If(Prim("=", Var "n", CstI 0), CstI 1, If(Prim("=", Var "n", CstI 1), 
                       CstI 3, 
-                      Prim("*", CstI 3, Call(Var "power", Prim("-", Var "n", CstI 1))))), Call(Var "power", Var "n"))
+                      Prim("*", CstI 3, Call(Var "power", [Prim("-", Var "n", CstI 1)])))), Call(Var "power", [Var "n"]))
 
 
 //The idea behind this function, is that you call it with "eval sumpower [("n", (Int) 4);("power", (Closure) ("power", "n", power, []))];; " --> Use closure to define "power".
-let sumpower = Letfun("sum", "n", 
+let sumpower = Letfun("sum", ["n"], 
                       If(Prim("=", Var "n", CstI 0),
                       CstI 1,
-                      Prim("+", Call(Var "power", Var "n"), Call(Var "sum", Prim("-", Var "n", CstI 1)))),
-                        Call(Var "sum", Var "n"))
+                      Prim("+", Call(Var "power", [Var "n"]), Call(Var "sum", [Prim("-", Var "n", CstI 1)]))),
+                        Call(Var "sum", [Var "n"]))
 
-//Look at it, and cry... 
-let power8  =  Letfun("power8", "n",
+(*
+let power8  =  Letfun("power8", ["n"],
                       If(
                       Prim("=", Var "n", CstI 0),
                       CstI 0,
                       Prim("+", Prim("*", Var "n",  Prim("*", Var "n", Prim("*", Var "n", Prim("*", Var "n", Prim("*", Var "n", Prim("*", Var "n", Prim("*", Var "n", Var"n"))))))),
-                      Call(Var "power8", Prim("-", Var "n", CstI 1)))),
-                      Call(Var "power8", Var "n"))
-
-let power8REAL =  Letfun("power8", "n",
-                      If(
-                      Prim("=", Var "n", CstI 0),
-                      CstI 0,
-                      
-                      Letfun("loop", Let(Var "counter"), 
-                      
-                       ),
-                      Call(Var "power8", Prim("-", Var "n", CstI 1)))),
-                      Call(Var "power8", Var "n"))
+                      Call(Var "power8", [Prim("-", Var "n", CstI 1)]))),
+                      Call(Var "power8", [Var "n"]))
 *)
+
+//Don't look above.
+
+
+//Calculates the sum of the exponent from 1...root.
+let power8 = Letfun("p8", ["n"],
+                          Letfun("aux", ["k"],
+                          If(Prim("=", Var "k", CstI 0),
+                            CstI 1,
+                            Prim("*", Var "n", Call(Var "aux", [Prim("-", Var "k", CstI 1)]))),
+                          Call(Var "aux", [CstI 8])),
+                          Call(Var "p8", [Var "n"]))

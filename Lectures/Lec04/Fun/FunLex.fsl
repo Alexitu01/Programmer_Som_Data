@@ -52,10 +52,12 @@ rule Token = parse
   | '+'             { PLUS }                     
   | '-'             { MINUS }                     
   | '*'             { TIMES }                     
-  | '/'             { DIV }                     
-  | '%'             { MOD }
+  | '/'             { DIV  }                     
+  | '%'             { MOD  }
   | '('             { LPAR }
   | ')'             { RPAR }
+  | "&&"            { AND  }
+  | "||"            { OR   }
   | eof             { EOF }
   | _               { failwith "Lexer error: illegal symbol" }
 
