@@ -162,6 +162,6 @@ let power8 = Letfun("p8", ["n"],
 let power8sum = Letfun("p8s", ["n"],
                         If(Prim("=", Var "n", CstI 0),
                           CstI 0,
-                          Prim("+", Call(Var "p8", [Var "n"]), Call(Var "p8s", [Prim("-", Var "n", CstI 1)])))),
+                          Prim("+", Call(Var "p8", [Var "n"]), Call(Var "p8s", [Prim("-", Var "n", CstI 1)]))),
                         Call(Var "sumPow8", [Var "n"]))
 
