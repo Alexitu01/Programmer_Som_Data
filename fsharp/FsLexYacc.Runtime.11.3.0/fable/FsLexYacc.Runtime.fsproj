@@ -5,7 +5,7 @@
     <OutputType>Library</OutputType>
     <Description>Runtime for FsLex/FsYacc lexer/parser generation tools</Description>
   </PropertyGroup>
-  <ItemGroup><Compile Include="..\..\..\Lectures\Lec01\Intcomp\Intcomp1.fs" /><Compile Include="..\..\..\Lectures\Lec02\ex2_4Handout.fs" /><Compile Include="..\..\..\Lectures\Lec01\Intro\Intro2.fs" />
+  <ItemGroup><Compile Include="..\..\..\Lectures\Lec04\Fun\Absyn.fs" /><Compile Include="..\..\..\Lectures\Lec04\Fun\Fun.fs" /><Compile Include="..\..\..\Lectures\Lec01\Intcomp\Intcomp1.fs" /><Compile Include="..\..\..\Lectures\Lec02\ex2_4Handout.fs" /><Compile Include="..\..\..\Lectures\Lec01\Intro\Intro2.fs" />
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Lexing.fsi" />
     <Compile Include="Lexing.fs" />
