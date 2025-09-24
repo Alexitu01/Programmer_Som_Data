@@ -58,14 +58,12 @@ let rec eval (e : expr) (env : value env) : int =
       let bodyEnv = (f, Closure(f, x, fBody, env)) :: env 
       eval letBody bodyEnv
 
-
-
     | Call(Var f, eArg) -> 
       let fClosure = lookup env f
       match fClosure with
       | Closure (f, x, fBody, fDeclEnv) ->
-        let xValues = List.fold(fun acc elem -> Int(eval elem env) :: acc) [] eArg
-        let fBodyEnv = List.zip x xValues @ [(f, fClosure)] @ fDeclEnv
+        let xValues = (List.fold(fun acc elem ->  Int (eval elem env) :: acc) [] eArg)
+        let fBodyEnv = (List.zip x xValues @ [(f, fClosure)]) @ fDeclEnv
         eval fBody fBodyEnv
 
       | _ -> failwith "eval Call: not a function"
@@ -151,5 +149,14 @@ let power8  =  Letfun("power8", "n",
                       Call(Var "power8", Prim("-", Var "n", CstI 1)))),
                       Call(Var "power8", Var "n"))
 
-
+let power8REAL =  Letfun("power8", "n",
+                      If(
+                      Prim("=", Var "n", CstI 0),
+                      CstI 0,
+                      
+                      Letfun("loop", Let(Var "counter"), 
+                      
+                       ),
+                      Call(Var "power8", Prim("-", Var "n", CstI 1)))),
+                      Call(Var "power8", Var "n"))
 *)
