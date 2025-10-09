@@ -34,3 +34,91 @@ val it: HigherFun.value =
 
 The reason it returns a Closure instead of a value, is because the function "add"
 is applied to only one argument. So the result is a "Closure" waiting for a second argument.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+***********************************************************************************
+6.5
+"let f x = 1
+in f f end"
+val it: string = "int"
+
+"let f g = g g
+in f end"
+type error: circularity
+g is both a variable and a function that depends on that variable - infinite loop
+
+"let f x =
+  let g y = y
+  in g false end
+in f 42 end"
+val it: string = "bool"
+
+"let f x =
+  let g y = if true then y else x
+  in g false end
+in f 42 end"
+type error: bool and int
+x and y must be of the same type
+they are set to be bools
+then they are set to be ints
+
+"let f x =
+  let g y = if true then y else x
+  in g false end
+in f true end"
+val it: string = "bool"
+
+"bool -> bool"
+let f x = if x then x else false in f end
+
+"int -> int"
+let f x = x + 1 in f end
+
+"int -> int -> int"
+let f x =
+  let g y = x + y in g end
+in f end
+
+"'a -> 'b -> 'a"
+let f x = 
+  let g y = x in g end
+in f end
+
+"'a -> 'b -> 'b"
+let f x =
+  let g y = y in g end
+in f end
+
+"('a -> 'b) -> ('b -> 'c) -> ('a -> 'c)"
+let f f1 =
+  let g f2 =
+    let h x = f2 (f1 x) in h end
+  in g end
+in f end
+
+"'a -> 'b"
+is this possible?
+
+"'a" ('a -> 'a)
+let x =
+  let y z = z in
+  y end
+in x end
