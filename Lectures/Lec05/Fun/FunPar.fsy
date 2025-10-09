@@ -11,7 +11,7 @@
 %token <string> NAME
 %token <bool> CSTBOOL
 
-%token ELSE END FALSE IF IN LET NOT THEN TRUE
+%token ELSE END FALSE IF IN LET NOT THEN TRUE ARROW FUN
 %token PLUS MINUS TIMES DIV MOD
 %token EQ NE GT LT GE LE
 %token LPAR RPAR 
@@ -25,7 +25,7 @@
 %nonassoc NOT           /* highest precedence  */
 
 %start Main
-%type <Absyn.expr> Main Expr AtExpr Const
+%type <Absyn.expr> Main Expr AtExpr Const Fun
 %type <Absyn.expr> AppExpr
 
 %%
@@ -58,6 +58,7 @@ AtExpr:
   | LET NAME EQ Expr IN Expr END        { Let($2, $4, $6)        }
   | LET NAME NAME EQ Expr IN Expr END   { Letfun($2, $3, $5, $7) }
   | LPAR Expr RPAR                      { $2                     }
+  | Fun                                 { $1                     }
 ;
 
 AppExpr:
@@ -68,4 +69,8 @@ AppExpr:
 Const:
     CSTINT                              { CstI($1)               }
   | CSTBOOL                             { CstB($1)               }
+;
+
+Fun:
+    FUN NAME ARROW Expr                 { Fun($2, $4)            }
 ;

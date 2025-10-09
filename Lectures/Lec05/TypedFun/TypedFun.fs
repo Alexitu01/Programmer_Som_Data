@@ -37,7 +37,7 @@ type typ =
   | TypI                                (* int                         *)
   | TypB                                (* bool                        *)
   | TypF of typ * typ                   (* (argumenttype, resulttype)  *)
-  | TypL of typ
+  | TypL of typ             
 
 (* New abstract syntax with explicit types, instead of Absyn.expr: *)
 
@@ -58,6 +58,7 @@ type tyexpr =
 type value = 
   | Int of int
   | Closure of string * string * tyexpr * value env       (* (f, x, fBody, fDeclEnv) *)
+  
 
 let rec eval (e : tyexpr) (env : value env) : int =
     match e with

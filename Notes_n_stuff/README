@@ -1,0 +1,13 @@
+
+fsharp/FsLexYacc.11.3.0/build/fsyacc/net6.0/fsyacc.dll
+fsyacc --module FunPar FunPar.fsy
+dotnet "fsharp/FsLexYacc.11.3.0/build/fsyacc/net6.0/fsyacc.dll" --module FunPar "Lectures/Lec05/Fun/FunPar.fsy"
+
+
+fsharp/FsLexYacc.11.3.0/build/fslex/net6.0/fslex.dll
+fslex --unicode FunLex.fsl	
+dotnet "fsharp/FsLexYacc.11.3.0/build/fslex/net6.0/fslex.dll" --unicode "Lectures/Lec05/Fun/FunLex.fsl"
+
+
+** From Fun ** 
+dotnet fsi -r "../../../fsharp/FsLexYacc.11.3.0/build/fslex/net6.0/FsLexYacc.Runtime.dll" Util.fs Absyn.fs FunPar.fs FunLex.fs Parse.fs HigherFun.fs ParseAndRunHigher.fs
