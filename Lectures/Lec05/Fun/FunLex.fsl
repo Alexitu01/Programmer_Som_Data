@@ -31,9 +31,10 @@ let keyword s =
     | "not"   -> NOT
     | "then"  -> THEN
     | "true"  -> CSTBOOL true
+    | "fun"   -> FUN
     | _       -> NAME s
 }
-
+   
 rule Token = parse
   | [' ' '\t' '\r'] { Token lexbuf }
   | '\n'            { lexbuf.EndPos <- lexbuf.EndPos.NextLine; Token lexbuf }
@@ -43,6 +44,7 @@ rule Token = parse
   | "(*"            { commentStart := lexbuf.StartPos;
                       commentDepth := 1; 
                       SkipComment lexbuf; Token lexbuf }
+  | "->"            { ARROW }
   | '='             { EQ }
   | "<>"            { NE }
   | '>'             { GT }

@@ -74,3 +74,6 @@ F. Using the lexer, parser and polymorphic type inference together:
 
    open ParseAndType;;
    inferType (fromString "let f x = 1 in f 7 + f false end");;
+
+
+ run (fromString @"let add x = fun y -> x+y in add 2 5 end");;
