@@ -96,6 +96,7 @@ type nonTerminalId =
     | NONTERM_Paramdecs1
     | NONTERM_Block
     | NONTERM_StmtOrDecSeq
+    | NONTERM_StmtOrDec
     | NONTERM_Stmt
     | NONTERM_StmtM
     | NONTERM_StmtU
