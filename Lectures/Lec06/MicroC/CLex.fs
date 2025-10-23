@@ -106,13 +106,13 @@ let trans : uint16[] array =
     (* State 27 *)
      [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
     (* State 28 *)
-     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;61us;61us;61us;61us;61us;61us;61us;61us;61us;61us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
+     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;63us;63us;63us;63us;63us;63us;63us;63us;63us;63us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
     (* State 29 *)
-     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;65535us;65535us;65535us;65535us;65535us;65535us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
+     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;65535us;65535us;65535us;65535us;65535us;65535us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
     (* State 30 *)
-     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
+     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;61us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
     (* State 31 *)
-     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
+     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;60us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
     (* State 32 *)
      [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
     (* State 33 *)
@@ -170,11 +170,15 @@ let trans : uint16[] array =
     (* State 59 *)
      [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
     (* State 60 *)
-     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;65535us;65535us;65535us;65535us;65535us;65535us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;60us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
+     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
     (* State 61 *)
-     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;61us;61us;61us;61us;61us;61us;61us;61us;61us;61us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
+     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
+    (* State 62 *)
+     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;65535us;65535us;65535us;65535us;65535us;65535us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;62us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
+    (* State 63 *)
+     [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;63us;63us;63us;63us;63us;63us;63us;63us;63us;63us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
     |] 
-let actions : uint16[] = [|65535us;0us;3us;7us;4us;4us;5us;6us;7us;2us;1us;65535us;0us;1us;1us;2us;65535us;4us;4us;2us;3us;3us;4us;1us;0us;65535us;0us;1us;2us;3us;4us;5us;6us;7us;8us;9us;19us;12us;13us;32us;18us;20us;21us;22us;23us;24us;25us;26us;27us;30us;31us;32us;17us;16us;15us;14us;11us;10us;28us;29us;3us;2us;|]
+let actions : uint16[] = [|65535us;0us;3us;7us;4us;4us;5us;6us;7us;2us;1us;65535us;0us;1us;1us;2us;65535us;4us;4us;2us;3us;3us;4us;1us;0us;65535us;0us;1us;2us;3us;4us;5us;6us;7us;8us;9us;19us;12us;13us;34us;18us;20us;21us;22us;23us;24us;25us;26us;27us;30us;33us;34us;17us;16us;15us;14us;11us;10us;28us;29us;32us;31us;3us;2us;|]
 let _fslex_tables = FSharp.Text.Lexing.UnicodeTables.Create(trans,actions)
 let rec _fslex_dummy () = _fslex_dummy() 
 // Rule Token
@@ -183,259 +187,269 @@ and Token  lexbuf =
   | 0 -> ( 
 # 49 "Lectures/Lec06/MicroC/CLex.fsl"
                                      Token lexbuf 
-# 186 "Lectures/Lec06/MicroC/CLex.fs"
+# 190 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 1 -> ( 
 # 50 "Lectures/Lec06/MicroC/CLex.fsl"
                                      lexbuf.EndPos <- lexbuf.EndPos.NextLine; Token lexbuf 
-# 191 "Lectures/Lec06/MicroC/CLex.fs"
+# 195 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 2 -> ( 
 # 51 "Lectures/Lec06/MicroC/CLex.fsl"
                                      CSTINT (System.Int32.Parse (lexemeAsString lexbuf)) 
-# 196 "Lectures/Lec06/MicroC/CLex.fs"
+# 200 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 3 -> ( 
 # 53 "Lectures/Lec06/MicroC/CLex.fsl"
                                      keyword (lexemeAsString lexbuf) 
-# 201 "Lectures/Lec06/MicroC/CLex.fs"
+# 205 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 4 -> ( 
 # 54 "Lectures/Lec06/MicroC/CLex.fsl"
                                      PLUS 
-# 206 "Lectures/Lec06/MicroC/CLex.fs"
+# 210 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 5 -> ( 
 # 55 "Lectures/Lec06/MicroC/CLex.fsl"
                                      MINUS 
-# 211 "Lectures/Lec06/MicroC/CLex.fs"
+# 215 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 6 -> ( 
 # 56 "Lectures/Lec06/MicroC/CLex.fsl"
                                      TIMES 
-# 216 "Lectures/Lec06/MicroC/CLex.fs"
+# 220 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 7 -> ( 
 # 57 "Lectures/Lec06/MicroC/CLex.fsl"
                                      DIV 
-# 221 "Lectures/Lec06/MicroC/CLex.fs"
+# 225 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 8 -> ( 
 # 58 "Lectures/Lec06/MicroC/CLex.fsl"
                                      MOD 
-# 226 "Lectures/Lec06/MicroC/CLex.fs"
+# 230 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 9 -> ( 
 # 59 "Lectures/Lec06/MicroC/CLex.fsl"
                                      ASSIGN 
-# 231 "Lectures/Lec06/MicroC/CLex.fs"
+# 235 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 10 -> ( 
 # 60 "Lectures/Lec06/MicroC/CLex.fsl"
                                      EQ 
-# 236 "Lectures/Lec06/MicroC/CLex.fs"
+# 240 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 11 -> ( 
 # 61 "Lectures/Lec06/MicroC/CLex.fsl"
                                      NE 
-# 241 "Lectures/Lec06/MicroC/CLex.fs"
+# 245 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 12 -> ( 
 # 62 "Lectures/Lec06/MicroC/CLex.fsl"
                                      GT 
-# 246 "Lectures/Lec06/MicroC/CLex.fs"
+# 250 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 13 -> ( 
 # 63 "Lectures/Lec06/MicroC/CLex.fsl"
                                      LT 
-# 251 "Lectures/Lec06/MicroC/CLex.fs"
+# 255 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 14 -> ( 
 # 64 "Lectures/Lec06/MicroC/CLex.fsl"
                                      GE 
-# 256 "Lectures/Lec06/MicroC/CLex.fs"
+# 260 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 15 -> ( 
 # 65 "Lectures/Lec06/MicroC/CLex.fsl"
                                      LE 
-# 261 "Lectures/Lec06/MicroC/CLex.fs"
+# 265 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 16 -> ( 
 # 66 "Lectures/Lec06/MicroC/CLex.fsl"
                                      SEQOR 
-# 266 "Lectures/Lec06/MicroC/CLex.fs"
+# 270 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 17 -> ( 
 # 67 "Lectures/Lec06/MicroC/CLex.fsl"
                                      SEQAND 
-# 271 "Lectures/Lec06/MicroC/CLex.fs"
+# 275 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 18 -> ( 
 # 68 "Lectures/Lec06/MicroC/CLex.fsl"
                                      AMP 
-# 276 "Lectures/Lec06/MicroC/CLex.fs"
+# 280 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 19 -> ( 
 # 69 "Lectures/Lec06/MicroC/CLex.fsl"
                                      NOT 
-# 281 "Lectures/Lec06/MicroC/CLex.fs"
+# 285 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 20 -> ( 
 # 70 "Lectures/Lec06/MicroC/CLex.fsl"
                                      LPAR 
-# 286 "Lectures/Lec06/MicroC/CLex.fs"
+# 290 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 21 -> ( 
 # 71 "Lectures/Lec06/MicroC/CLex.fsl"
                                      RPAR 
-# 291 "Lectures/Lec06/MicroC/CLex.fs"
+# 295 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 22 -> ( 
 # 72 "Lectures/Lec06/MicroC/CLex.fsl"
                                      LBRACE 
-# 296 "Lectures/Lec06/MicroC/CLex.fs"
+# 300 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 23 -> ( 
 # 73 "Lectures/Lec06/MicroC/CLex.fsl"
                                      RBRACE 
-# 301 "Lectures/Lec06/MicroC/CLex.fs"
+# 305 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 24 -> ( 
 # 74 "Lectures/Lec06/MicroC/CLex.fsl"
                                      LBRACK 
-# 306 "Lectures/Lec06/MicroC/CLex.fs"
+# 310 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 25 -> ( 
 # 75 "Lectures/Lec06/MicroC/CLex.fsl"
                                      RBRACK 
-# 311 "Lectures/Lec06/MicroC/CLex.fs"
+# 315 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 26 -> ( 
 # 76 "Lectures/Lec06/MicroC/CLex.fsl"
                                      SEMI 
-# 316 "Lectures/Lec06/MicroC/CLex.fs"
+# 320 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 27 -> ( 
 # 77 "Lectures/Lec06/MicroC/CLex.fsl"
                                      COMMA 
-# 321 "Lectures/Lec06/MicroC/CLex.fs"
+# 325 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 28 -> ( 
 # 78 "Lectures/Lec06/MicroC/CLex.fsl"
                                      EndLineComment lexbuf; Token lexbuf 
-# 326 "Lectures/Lec06/MicroC/CLex.fs"
+# 330 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 29 -> ( 
 # 79 "Lectures/Lec06/MicroC/CLex.fsl"
                                      Comment lexbuf; Token lexbuf 
-# 331 "Lectures/Lec06/MicroC/CLex.fs"
+# 335 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 30 -> ( 
 # 80 "Lectures/Lec06/MicroC/CLex.fsl"
                                      CSTSTRING (String [] lexbuf) 
-# 336 "Lectures/Lec06/MicroC/CLex.fs"
+# 340 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 31 -> ( 
 # 81 "Lectures/Lec06/MicroC/CLex.fsl"
-                                     EOF 
-# 341 "Lectures/Lec06/MicroC/CLex.fs"
+                                     INCREMENT 
+# 345 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 32 -> ( 
 # 82 "Lectures/Lec06/MicroC/CLex.fsl"
+                                     DECREMENT 
+# 350 "Lectures/Lec06/MicroC/CLex.fs"
+          )
+  | 33 -> ( 
+# 83 "Lectures/Lec06/MicroC/CLex.fsl"
+                                     EOF 
+# 355 "Lectures/Lec06/MicroC/CLex.fs"
+          )
+  | 34 -> ( 
+# 84 "Lectures/Lec06/MicroC/CLex.fsl"
                                      failwith "Lexer error: illegal symbol" 
-# 346 "Lectures/Lec06/MicroC/CLex.fs"
+# 360 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | _ -> failwith "Token"
 // Rule Comment
 and Comment  lexbuf =
   match _fslex_tables.Interpret(16,lexbuf) with
   | 0 -> ( 
-# 85 "Lectures/Lec06/MicroC/CLex.fsl"
+# 87 "Lectures/Lec06/MicroC/CLex.fsl"
                                      Comment lexbuf; Comment lexbuf 
-# 355 "Lectures/Lec06/MicroC/CLex.fs"
+# 369 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 1 -> ( 
-# 86 "Lectures/Lec06/MicroC/CLex.fsl"
+# 88 "Lectures/Lec06/MicroC/CLex.fsl"
                                      () 
-# 360 "Lectures/Lec06/MicroC/CLex.fs"
+# 374 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 2 -> ( 
-# 87 "Lectures/Lec06/MicroC/CLex.fsl"
+# 89 "Lectures/Lec06/MicroC/CLex.fsl"
                                      lexbuf.EndPos <- lexbuf.EndPos.NextLine; Comment lexbuf 
-# 365 "Lectures/Lec06/MicroC/CLex.fs"
+# 379 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 3 -> ( 
-# 88 "Lectures/Lec06/MicroC/CLex.fsl"
+# 90 "Lectures/Lec06/MicroC/CLex.fsl"
                                      failwith "Lexer error: unterminated comment" 
-# 370 "Lectures/Lec06/MicroC/CLex.fs"
+# 384 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 4 -> ( 
-# 89 "Lectures/Lec06/MicroC/CLex.fsl"
+# 91 "Lectures/Lec06/MicroC/CLex.fsl"
                                      Comment lexbuf 
-# 375 "Lectures/Lec06/MicroC/CLex.fs"
+# 389 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | _ -> failwith "Comment"
 // Rule EndLineComment
 and EndLineComment  lexbuf =
   match _fslex_tables.Interpret(11,lexbuf) with
   | 0 -> ( 
-# 92 "Lectures/Lec06/MicroC/CLex.fsl"
+# 94 "Lectures/Lec06/MicroC/CLex.fsl"
                                      lexbuf.EndPos <- lexbuf.EndPos.NextLine 
-# 384 "Lectures/Lec06/MicroC/CLex.fs"
+# 398 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 1 -> ( 
-# 93 "Lectures/Lec06/MicroC/CLex.fsl"
+# 95 "Lectures/Lec06/MicroC/CLex.fsl"
                                      () 
-# 389 "Lectures/Lec06/MicroC/CLex.fs"
+# 403 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 2 -> ( 
-# 94 "Lectures/Lec06/MicroC/CLex.fsl"
+# 96 "Lectures/Lec06/MicroC/CLex.fsl"
                                      EndLineComment lexbuf 
-# 394 "Lectures/Lec06/MicroC/CLex.fs"
+# 408 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | _ -> failwith "EndLineComment"
 // Rule String
 and String chars lexbuf =
   match _fslex_tables.Interpret(0,lexbuf) with
   | 0 -> ( 
-# 98 "Lectures/Lec06/MicroC/CLex.fsl"
+# 100 "Lectures/Lec06/MicroC/CLex.fsl"
                        Microsoft.FSharp.Core.String.concat "" (List.map string (List.rev chars)) 
-# 403 "Lectures/Lec06/MicroC/CLex.fs"
+# 417 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 1 -> ( 
-# 100 "Lectures/Lec06/MicroC/CLex.fsl"
+# 102 "Lectures/Lec06/MicroC/CLex.fsl"
                        String (cEscape (lexemeAsString lexbuf) :: chars) lexbuf 
-# 408 "Lectures/Lec06/MicroC/CLex.fs"
+# 422 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 2 -> ( 
-# 102 "Lectures/Lec06/MicroC/CLex.fsl"
+# 104 "Lectures/Lec06/MicroC/CLex.fsl"
                        String ('\'' :: chars) lexbuf 
-# 413 "Lectures/Lec06/MicroC/CLex.fs"
+# 427 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 3 -> ( 
-# 104 "Lectures/Lec06/MicroC/CLex.fsl"
+# 106 "Lectures/Lec06/MicroC/CLex.fsl"
                        failwith "Lexer error: illegal escape sequence" 
-# 418 "Lectures/Lec06/MicroC/CLex.fs"
+# 432 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 4 -> ( 
-# 106 "Lectures/Lec06/MicroC/CLex.fsl"
+# 108 "Lectures/Lec06/MicroC/CLex.fsl"
                        failwith "Lexer error: unterminated string" 
-# 423 "Lectures/Lec06/MicroC/CLex.fs"
+# 437 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 5 -> ( 
-# 108 "Lectures/Lec06/MicroC/CLex.fsl"
+# 110 "Lectures/Lec06/MicroC/CLex.fsl"
                        failwith "Lexer error: newline in string" 
-# 428 "Lectures/Lec06/MicroC/CLex.fs"
+# 442 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 6 -> ( 
-# 110 "Lectures/Lec06/MicroC/CLex.fsl"
+# 112 "Lectures/Lec06/MicroC/CLex.fsl"
                        failwith "Lexer error: invalid character in string" 
-# 433 "Lectures/Lec06/MicroC/CLex.fs"
+# 447 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 7 -> ( 
-# 112 "Lectures/Lec06/MicroC/CLex.fsl"
+# 114 "Lectures/Lec06/MicroC/CLex.fsl"
                        String (char (lexbuf.LexemeChar 0) :: chars) lexbuf 
-# 438 "Lectures/Lec06/MicroC/CLex.fs"
+# 452 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | _ -> failwith "String"
 

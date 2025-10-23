@@ -16,16 +16,15 @@ void main(int n)
 void squares(int n, int arr[])
 {
     int i;
-    for (i = 0; i < n; i = i + 1)
+    for (i = 0; i < n; ++i)
     {
         arr[i] = i * i;
-        print arr[i];
     }
 }
 
 void arrsum(int n, int arr[], int *sump) {
     int i;
-    for(i = 0; i < n; i = i+1){
+    for(i = 0; i < n; ++i){
         sump = sump + arr[i];
     }
     print sump;
