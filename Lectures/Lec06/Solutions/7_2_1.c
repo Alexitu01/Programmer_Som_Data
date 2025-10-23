@@ -3,7 +3,7 @@
 void main(int n){
 
     if(n > 4){
-        printf("Number cannot be higher than 4");
+       
     } else{
     int arr[4];
     arr[0] = 7;
@@ -11,6 +11,7 @@ void main(int n){
     arr[2] = 9;
     arr[3] = 8;
     int *p;
+    p = 0;
     arrsum(n, arr, p);
 
     }
@@ -18,9 +19,10 @@ void main(int n){
 
 void arrsum(int n, int arr[], int *sump) {
     int i;
-    for(i = 0; i <= n; i = i+1){
+    for(i = 0; i < n; i = i+1){
         sump = sump + arr[i];
     }
+    print sump;
 }
 
 
