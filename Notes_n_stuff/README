@@ -23,3 +23,5 @@ dotnet fsi -r "../../../fsharp/FsLexYacc.11.3.0/build/fslex/net6.0/FsLexYacc.Run
 
 
 fromFile "../Solutions/7_2_1.c";;
+
+run (fromFile "../Solutions/7_2_2.c") [10];;

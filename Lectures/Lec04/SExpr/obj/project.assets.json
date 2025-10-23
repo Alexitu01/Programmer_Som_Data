@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\simun\\.nuget\\packages\\": {}
+    "/Users/alexholst/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\Lectures\\Lec04\\SExpr\\sexpr.csproj",
+      "projectUniqueName": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/Lectures/Lec04/SExpr/sexpr.csproj",
       "projectName": "sexpr",
-      "projectPath": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\Lectures\\Lec04\\SExpr\\sexpr.csproj",
-      "packagesPath": "C:\\Users\\simun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\Lectures\\Lec04\\SExpr\\obj\\",
+      "projectPath": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/Lectures/Lec04/SExpr/sexpr.csproj",
+      "packagesPath": "/Users/alexholst/.nuget/packages/",
+      "outputPath": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/Lectures/Lec04/SExpr/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\simun\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/alexholst/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -66,15 +66,11 @@
             "version": "[8.0.13, 8.0.13]"
           },
           {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "name": "Microsoft.NETCore.App.Host.osx-arm64",
             "version": "[8.0.13, 8.0.13]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.13, 8.0.13]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
             "version": "[8.0.13, 8.0.13]"
           }
         ],
@@ -83,7 +79,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

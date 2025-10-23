@@ -656,7 +656,7 @@ let _fsyacc_reductions = lazy [|
                 (
                    (
 # 92 "Lectures/Lec06/MicroC/CPar.fsy"
-                                                                   Dec (fst _1, snd _1) 
+                                                               Dec (fst _1, snd _1) 
                    )
 # 92 "Lectures/Lec06/MicroC/CPar.fsy"
                  : 'gentype_StmtOrDec));
@@ -773,11 +773,11 @@ let _fsyacc_reductions = lazy [|
 # 108 "Lectures/Lec06/MicroC/CPar.fsy"
                                                                        
                            Block [
-                             Stmt (Expr _3);                          // init
+                             Stmt (Expr _3);                          
                              Stmt (While (_5,
                                    Block [
-                                     Stmt _9;                         // body
-                                     Stmt (Expr _7)                   // incr
+                                     Stmt _9;                         
+                                     Stmt (Expr _7)                   
                                    ]))
                            ]
                          
