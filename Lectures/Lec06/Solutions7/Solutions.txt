@@ -1,0 +1,256 @@
+Exercise 8.1:
+(i)
+Write up the bytecode in a more structured way with labels only at the beginning of the line (as in this chapter). 
+Write the corresponding micro-C code to the right of the stack machine code.
+Note that ex5.c has a nested scope (a block { ... }inside a function body); how is that visible in the generated code?
+
+** EX3
+
+[LDARGS; CALL (1, "L1"); STOP;          | Command line arguments ("n") -> function call to "L1" -> STOP
+                                        |
+Label "L1";                             | function "L1" body
+    INCSP 1;                            | Declare "i"
+    GETBP; CSTI 1; ADD;                 | AccVar &i -> Access variable "i" address at offset "1" from basepointer (and put on stack)
+    CSTI 0;                             | CstI 0 ->  put 0 on the stack
+    STI;                                | Assign("i", CstI 0) -> "i = 0" 
+    INCSP -1;                           | _ -> Remove "CstI 0" from stack
+    GOTO "L3";                          | _ -> Start while loop (L3) 
+                                        |
+Label "L2";                             | _ -> $3 The body of while loop.
+    GETBP; CSTI 1; ADD;                 | AccVar &i ->  Access variable "i" address at offset "1" from basepointer
+    LDI;                                | Access -> Put value of "i" on top of stack
+    PRINTI;                             | Prim1("printi", $2) -> print value of "i"
+    INCSP -1;                           | _ -> Removes value "i" from the stack.
+    GETBP; CSTI 1; ADD;                 | AccVar &i -> Access variable "i" address at offset "1" from basepointer 
+    GETBP; CSTI 1; ADD;                 | AccVar &i -> Access variable "i" address at offset "1" from basepointer (and put on stack, because we need it twice)
+    LDI;                                | Access -> put value of address "i" on top of stack
+    CSTI 1; ADD;                        | Prim("+", CstI 1, "i") -> add 1 to value of "i"
+    STI;                                | Assign("i", #27) -> "i = i+1"
+    INCSP -1;                           | _ -> Remove value of "i+1" from stack
+    INCSP 0;                            | _ -> dead code
+    GOTO "L3";                          | _ -> Go to "L3".
+                                        |
+Label "L3";                             | _ -> $1 condition for While 
+    GETBP; CSTI 1; ADD;                 | AccVar &i ->  Access variable "i" at offset "1" from basepointer
+    LDI;                                | Access -> Put value of "i" on top of stack
+    GETBP; CSTI 0; ADD;                 | AccVar &n ->  Access variable "n" at offset "0" from basepointer (because basepointer points at "n")
+    LDI;                                | Access -> Put value of address "n" on top of stack
+    LT;                                 | Prim("<", "i", "n") -> Bool if i<n added onto stack
+    IFNZRO "L2";                        | If(#38, "L2", _) -> If boolean at stack pointer is true, continue while loop.
+    INCSP -1;                           | _ -> Remove boolean from stack
+    RET 0]                              | RETURN -> returns the old basepointer as the current basepointer and "return adress" as program counter
+
+
+** EX5
+
+[LDARGS; CALL (1, "L1"); STOP;                     | Command line arguments ("n") -> function call to "L1" -> STOP
+                                                   |
+Label "L1";                                        | function "L1" body                    
+    INCSP 1;                                       | Declare "r"
+    GETBP; CSTI 1; ADD;                            | AccVar &r -> variable "r" address at offset "1" from basepointer on stack
+    GETBP; CSTI 0; ADD;                            | AccVar &n -> variable "n" address at offset "0" from basepointer on stackr
+    LDI;                                           | Access -> put value of "n" on top of stack
+    STI;                                           | Assign("r",  "n") -> "r = n"
+    INCSP -1;                                      | _ -> Remove value of "n" from stack
+    INCSP 1;                                       | Declare "r"
+    GETBP; CSTI 0; ADD;                            | AccVar &n -> variable "n" address at offset "0" from basepointer on stack
+    LDI;                                           | Access -> put value of "n" on top of stack
+    GETBP; CSTI 2; ADD;                            | AccVar &r -> variable "r" address at offset "2" from basepointer on stack
+    CALL (2, "L2");                                | Call function "L2" with arguments "n" and &r
+    INCSP -1;                                      | _ -> Remove return value from stack
+    GETBP; CSTI 2; ADD;                            | AccVar &r -> variable "r" address at offset "2" from basepointer on stack
+    LDI;                                           | Access -> put value of "r" on top of stack
+    PRINTI;                                        | Prim1("printi", $2) -> print value of "r" (value set by square function)
+    INCSP -1;                                      | _ -> Remove value of "r" from stack
+    INCSP -1;                                      | _ -> Remove r offset 2 variable from stack
+    GETBP; CSTI 1; ADD;                            | AccVar &r -> variable "r" address at offset "1" from basepointer on stack
+    LDI;                                           | Access -> put value of "r" on top of stack
+    PRINTI;                                        | Prim1("printi", $2) -> print value of "r" (value set to n at start of function)
+    INCSP -1;                                      | _ -> Remove value of "r" from stack
+    INCSP -1;                                      | _ -> Remove r offset 1 variable from stack
+    RET 0;                                         | RETURN -> returns the old basepointer as the current basepointer and "return adress" as program counter
+                                                   |                                                 |
+Label "L2";                                        | function "L2" body (square function)
+    GETBP; CSTI 1; ADD;                            | AccVar &r -> variable "rp" address at offset "1" from basepointer on stack
+    LDI;                                           | Access -> put value of "rp" on top of stack
+    GETBP; CSTI 0; ADD;                            | AccVar &n -> variable "n" address at offset "0" from basepointer on stack
+    LDI;                                           | Access -> put value of "n" on top of stack
+    GETBP; CSTI 0; ADD;                            | AccVar &n -> variable "n" address at offset "0" from basepointer on stack
+    LDI;                                           | Access -> put value of "n" on top of stack
+    MUL;                                           | Prim("*", "n", "n") -> multiply n*n and put on stack
+    STI;                                           | Assign("rp", n*n) -> "rp = n*n" (store value at address r)
+    INCSP -1;                                      | _ -> Remove value of n*n from stack
+    INCSP 0;                                       | _ -> dead code
+    RET 1]                                         | RETURN -> returns the old basepointer as the current basepointer and "return adress" as program counter, and returns 1 argument from current stackframe
+
+
+
+
+
+**
+
+**
+{0: LDARGS}
+[ 4 ]{1: CALL 1 5}
+[ 4 -999 4 ]{5: INCSP 1}
+[ 4 -999 4 0 ]{7: GETBP}
+[ 4 -999 4 0 2 ]{8: CSTI 1}
+[ 4 -999 4 0 2 1 ]{10: ADD}
+[ 4 -999 4 0 3 ]{11: CSTI 0}
+[ 4 -999 4 0 3 0 ]{13: STI}
+[ 4 -999 4 0 0 ]{14: INCSP -1}
+[ 4 -999 4 0 ]{16: GOTO 43}
+[ 4 -999 4 0 ]{43: GETBP}
+[ 4 -999 4 0 2 ]{44: CSTI 1}
+[ 4 -999 4 0 2 1 ]{46: ADD}
+[ 4 -999 4 0 3 ]{47: LDI}
+[ 4 -999 4 0 0 ]{48: GETBP}
+[ 4 -999 4 0 0 2 ]{49: CSTI 0}
+[ 4 -999 4 0 0 2 0 ]{51: ADD}
+[ 4 -999 4 0 0 2 ]{52: LDI}
+[ 4 -999 4 0 0 4 ]{53: LT}
+[ 4 -999 4 0 1 ]{54: IFNZRO 18}
+
+**
+
+**
+[ 4 -999 4 0 ]{18: GETBP}
+[ 4 -999 4 0 2 ]{19: CSTI 1}
+[ 4 -999 4 0 2 1 ]{21: ADD}
+[ 4 -999 4 0 3 ]{22: LDI}
+[ 4 -999 4 0 0 ]{23: PRINTI}
+0 [ 4 -999 4 0 0 ]{24: INCSP -1}
+[ 4 -999 4 0 ]{26: GETBP}
+[ 4 -999 4 0 2 ]{27: CSTI 1}
+[ 4 -999 4 0 2 1 ]{29: ADD}
+[ 4 -999 4 0 3 ]{30: GETBP}
+[ 4 -999 4 0 3 2 ]{31: CSTI 1}
+[ 4 -999 4 0 3 2 1 ]{33: ADD}
+[ 4 -999 4 0 3 3 ]{34: LDI}
+[ 4 -999 4 0 3 0 ]{35: CSTI 1}
+[ 4 -999 4 0 3 0 1 ]{37: ADD}
+[ 4 -999 4 0 3 1 ]{38: STI}
+[ 4 -999 4 1 1 ]{39: INCSP -1}
+[ 4 -999 4 1 ]{41: INCSP 0}
+[ 4 -999 4 1 ]{43: GETBP}
+[ 4 -999 4 1 2 ]{44: CSTI 1}
+[ 4 -999 4 1 2 1 ]{46: ADD}
+[ 4 -999 4 1 3 ]{47: LDI}
+[ 4 -999 4 1 1 ]{48: GETBP}
+[ 4 -999 4 1 1 2 ]{49: CSTI 0}
+[ 4 -999 4 1 1 2 0 ]{51: ADD}
+[ 4 -999 4 1 1 2 ]{52: LDI}
+[ 4 -999 4 1 1 4 ]{53: LT}
+[ 4 -999 4 1 1 ]{54: IFNZRO 18}
+
+**
+
+**
+[ 4 -999 4 1 ]{18: GETBP}
+[ 4 -999 4 1 2 ]{19: CSTI 1}
+[ 4 -999 4 1 2 1 ]{21: ADD}
+[ 4 -999 4 1 3 ]{22: LDI}
+[ 4 -999 4 1 1 ]{23: PRINTI}
+1 [ 4 -999 4 1 1 ]{24: INCSP -1}
+[ 4 -999 4 1 ]{26: GETBP}
+[ 4 -999 4 1 2 ]{27: CSTI 1}
+[ 4 -999 4 1 2 1 ]{29: ADD}
+[ 4 -999 4 1 3 ]{30: GETBP}
+[ 4 -999 4 1 3 2 ]{31: CSTI 1}
+[ 4 -999 4 1 3 2 1 ]{33: ADD}
+[ 4 -999 4 1 3 3 ]{34: LDI}
+[ 4 -999 4 1 3 1 ]{35: CSTI 1}
+[ 4 -999 4 1 3 1 1 ]{37: ADD}
+[ 4 -999 4 1 3 2 ]{38: STI}
+[ 4 -999 4 2 2 ]{39: INCSP -1}
+[ 4 -999 4 2 ]{41: INCSP 0}
+[ 4 -999 4 2 ]{43: GETBP}
+[ 4 -999 4 2 2 ]{44: CSTI 1}
+[ 4 -999 4 2 2 1 ]{46: ADD}
+[ 4 -999 4 2 3 ]{47: LDI}
+[ 4 -999 4 2 2 ]{48: GETBP}
+[ 4 -999 4 2 2 2 ]{49: CSTI 0}
+[ 4 -999 4 2 2 2 0 ]{51: ADD}
+[ 4 -999 4 2 2 2 ]{52: LDI}
+[ 4 -999 4 2 2 4 ]{53: LT}
+[ 4 -999 4 2 1 ]{54: IFNZRO 18}
+
+
+**
+
+**
+[ 4 -999 4 2 ]{18: GETBP}
+[ 4 -999 4 2 2 ]{19: CSTI 1}
+[ 4 -999 4 2 2 1 ]{21: ADD}
+[ 4 -999 4 2 3 ]{22: LDI}
+[ 4 -999 4 2 2 ]{23: PRINTI}
+2 [ 4 -999 4 2 2 ]{24: INCSP -1}
+[ 4 -999 4 2 ]{26: GETBP}
+[ 4 -999 4 2 2 ]{27: CSTI 1}
+[ 4 -999 4 2 2 1 ]{29: ADD}
+[ 4 -999 4 2 3 ]{30: GETBP}
+[ 4 -999 4 2 3 2 ]{31: CSTI 1}
+[ 4 -999 4 2 3 2 1 ]{33: ADD}
+[ 4 -999 4 2 3 3 ]{34: LDI}
+[ 4 -999 4 2 3 2 ]{35: CSTI 1}
+[ 4 -999 4 2 3 2 1 ]{37: ADD}
+[ 4 -999 4 2 3 3 ]{38: STI}
+[ 4 -999 4 3 3 ]{39: INCSP -1}
+[ 4 -999 4 3 ]{41: INCSP 0}
+[ 4 -999 4 3 ]{43: GETBP}
+[ 4 -999 4 3 2 ]{44: CSTI 1}
+[ 4 -999 4 3 2 1 ]{46: ADD}
+[ 4 -999 4 3 3 ]{47: LDI}
+[ 4 -999 4 3 3 ]{48: GETBP}
+[ 4 -999 4 3 3 2 ]{49: CSTI 0}
+[ 4 -999 4 3 3 2 0 ]{51: ADD}
+[ 4 -999 4 3 3 2 ]{52: LDI}
+[ 4 -999 4 3 3 4 ]{53: LT}
+[ 4 -999 4 3 1 ]{54: IFNZRO 18}
+
+**
+
+**
+[ 4 -999 4 3 ]{18: GETBP}
+[ 4 -999 4 3 2 ]{19: CSTI 1}
+[ 4 -999 4 3 2 1 ]{21: ADD}
+[ 4 -999 4 3 3 ]{22: LDI}
+[ 4 -999 4 3 3 ]{23: PRINTI}
+3 [ 4 -999 4 3 3 ]{24: INCSP -1}
+[ 4 -999 4 3 ]{26: GETBP}
+[ 4 -999 4 3 2 ]{27: CSTI 1}
+[ 4 -999 4 3 2 1 ]{29: ADD}
+[ 4 -999 4 3 3 ]{30: GETBP}
+[ 4 -999 4 3 3 2 ]{31: CSTI 1}
+[ 4 -999 4 3 3 2 1 ]{33: ADD}
+[ 4 -999 4 3 3 3 ]{34: LDI}
+[ 4 -999 4 3 3 3 ]{35: CSTI 1}
+[ 4 -999 4 3 3 3 1 ]{37: ADD}
+[ 4 -999 4 3 3 4 ]{38: STI}
+[ 4 -999 4 4 4 ]{39: INCSP -1}
+[ 4 -999 4 4 ]{41: INCSP 0}
+[ 4 -999 4 4 ]{43: GETBP}
+[ 4 -999 4 4 2 ]{44: CSTI 1}
+[ 4 -999 4 4 2 1 ]{46: ADD}
+[ 4 -999 4 4 3 ]{47: LDI}
+[ 4 -999 4 4 4 ]{48: GETBP}
+[ 4 -999 4 4 4 2 ]{49: CSTI 0}
+[ 4 -999 4 4 4 2 0 ]{51: ADD}
+[ 4 -999 4 4 4 2 ]{52: LDI}
+[ 4 -999 4 4 4 4 ]{53: LT}
+[ 4 -999 4 4 0 ]{54: IFNZRO 18}
+
+
+
+**
+Exit while-loop because condition is false, (4 not less than n=4)
+It removes the boolean from the stack and returns nothing because the function is void.
+**
+[ 4 -999 4 4 ]{56: INCSP -1}
+[ 4 -999 4 ]{58: RET 0}
+[ 4 ]{4: STOP}
+
+
+
+
+
