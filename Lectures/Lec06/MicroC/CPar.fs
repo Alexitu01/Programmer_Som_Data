@@ -887,7 +887,7 @@ let _fsyacc_reductions = lazy [|
                 (
                    (
 # 134 "Lectures/Lec06/MicroC/CPar.fsy"
-                                                               Assign(_2, Prim2("+", Access _2, CstI 1)) 
+                                                               PreInc _2           
                    )
 # 134 "Lectures/Lec06/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
@@ -898,7 +898,7 @@ let _fsyacc_reductions = lazy [|
                 (
                    (
 # 135 "Lectures/Lec06/MicroC/CPar.fsy"
-                                                               Assign(_2, Prim2("-", Access _2, CstI 1)) 
+                                                               PreDec _2           
                    )
 # 135 "Lectures/Lec06/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));

@@ -131,8 +131,8 @@ Expr:
 ExprNotAccess:
     AtExprNotAccess                     { $1                  }
   | Access ASSIGN Expr                  { Assign($1, $3)      }
-  | INCREMENT Access                    { Assign($2, Prim2("+", Access $2, CstI 1)) }
-  | DECREMENT Access                    { Assign($2, Prim2("-", Access $2, CstI 1)) }
+  | INCREMENT Access                    { PreInc $2           }
+  | DECREMENT Access                    { PreDec $2           }
   | NAME LPAR Exprs RPAR                { Call($1, $3)        }  
   | NOT Expr                            { Prim1("!", $2)      }
   | PRINT Expr                          { Prim1("printi", $2) }
