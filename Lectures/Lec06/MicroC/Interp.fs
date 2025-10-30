@@ -199,13 +199,13 @@ and eval e locEnv gloEnv store : int * store =
       let addrval = getSto str loc 
       let newVal = addrval + 1
       let newStore = setSto str loc newVal
-      eval e locEnv gloEnv newStore
+      (newVal, newStore)
     | PreDec acc -> //decrement
       let (loc, str) = access acc locEnv gloEnv store
       let addrval = getSto str loc 
       let newVal = addrval - 1
       let newStore = setSto str loc newVal
-      eval e locEnv gloEnv newStore
+      (newVal, newStore)
 
 and access acc locEnv gloEnv store : int * store = 
     match acc with 
