@@ -143,6 +143,7 @@ let rec exec stmt (locEnv : locEnv) (gloEnv : gloEnv) (store : store) : store =
           | s1::sr -> loop sr (stmtordec s1 locEnv gloEnv store)
       loop stmts (locEnv, store) 
     | Return _ -> failwith "return not implemented"
+    | Case (const, body) -> 
 
 and stmtordec stmtordec locEnv gloEnv store = 
     match stmtordec with 

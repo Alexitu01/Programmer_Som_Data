@@ -28,7 +28,9 @@ let keyword s =
     | "true"    -> CSTBOOL 1
     | "void"    -> VOID 
     | "while"   -> WHILE 
-    | "for"     -> FOR        
+    | "for"     -> FOR
+    | "switch"  -> SWITCH
+    | "case"    -> CASE
     | _         -> NAME s
  
 let cEscape s = 
@@ -59,6 +61,7 @@ rule Token = parse
   | '='             { ASSIGN } 
   | "=="            { EQ } 
   | "!="            { NE }
+  | '?'             { QST }
   | '>'             { GT }
   | '<'             { LT }
   | ">="            { GE }
@@ -74,6 +77,7 @@ rule Token = parse
   | '['             { LBRACK }
   | ']'             { RBRACK }
   | ';'             { SEMI }
+  | ':'             { COLON }
   | ','             { COMMA }
   | "//"            { EndLineComment lexbuf; Token lexbuf }
   | "/*"            { Comment lexbuf; Token lexbuf }
