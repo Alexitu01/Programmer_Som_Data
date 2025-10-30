@@ -17,7 +17,6 @@ A. Generating and compiling the lexer and parser for micro-C, and
    run (fromFile "ex5.c") [4];;
    run (fromFile "ex11.c") [8];;
 
-   run (fromFile "../Solutions7/Solutions.c") [];;
 
 B. To compile and use the micro-C compiler
 

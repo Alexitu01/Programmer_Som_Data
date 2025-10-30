@@ -24,7 +24,7 @@ and expr =
   | Orelse of expr * expr            (* Sequential or               *)
   | Call of string * expr list       (* Function call f(...)        *)
   | PreInc of access                 (* C/C++/Java/C# ++i or ++a[e] *)
-  | PreDec of access                (* C/C++/Java/C# --i or --a[e] *)
+  | PreDec of access                 (* C/C++/Java/C# --i or --a[e] *)
                                                                    
 and access =                                                       
   | AccVar of string                 (* Variable access        x    *) 
@@ -37,9 +37,6 @@ and stmt =
   | Expr of expr                     (* Expression statement   e;   *)
   | Return of expr option            (* Return from method          *)
   | Block of stmtordec list          (* Block: grouping and scope   *)
-  | Ternary of expr * expr * expr    (*       e1 ? e2 : e3          *)
-  | Case of expr * stmt              (* Case statement              *)
-  | Switch of expr * (expr * stmt) list  (* switch(e) { case e1: s1; ... } *)
                                                                    
 and stmtordec =                                                    
   | Dec of typ * string              (* Local variable declaration  *)
