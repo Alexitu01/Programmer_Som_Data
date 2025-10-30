@@ -172,7 +172,6 @@ let rec cStmt stmt (varEnv : varEnv) (funEnv : funEnv) : instr list =
               caseLabels caseBodies))
       
       cExpr e varEnv funEnv @ LabelTabel @ [GOTO labend] @ BodyTabel @ [Label labend]
-    |Case (e1, body) -> 
       
       
 
