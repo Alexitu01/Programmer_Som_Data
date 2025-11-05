@@ -11,7 +11,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyDescriptionAttribute("Runtime for FsLex/FsYacc lexer/parser generation tools")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5c0d36916796e0255f909987b469dd8e4dc303b")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c81897ede9944210c817e8acda803e4aafd28781")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("FsLexYacc.Runtime")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("FsLexYacc.Runtime")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]
