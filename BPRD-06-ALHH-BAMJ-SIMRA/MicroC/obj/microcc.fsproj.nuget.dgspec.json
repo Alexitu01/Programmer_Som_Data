@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/Lectures/Lec06/MicroC/microcc.fsproj": {}
+    "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/BPRD-06-ALHH-BAMJ-SIMRA/MicroC/microcc.fsproj": {}
   },
   "projects": {
-    "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/Lectures/Lec06/MicroC/microcc.fsproj": {
+    "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/BPRD-06-ALHH-BAMJ-SIMRA/MicroC/microcc.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/Lectures/Lec06/MicroC/microcc.fsproj",
+        "projectUniqueName": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/BPRD-06-ALHH-BAMJ-SIMRA/MicroC/microcc.fsproj",
         "projectName": "microcc",
-        "projectPath": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/Lectures/Lec06/MicroC/microcc.fsproj",
+        "projectPath": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/BPRD-06-ALHH-BAMJ-SIMRA/MicroC/microcc.fsproj",
         "packagesPath": "/Users/alexholst/.nuget/packages/",
-        "outputPath": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/Lectures/Lec06/MicroC/obj/",
+        "outputPath": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/BPRD-06-ALHH-BAMJ-SIMRA/MicroC/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/alexholst/.nuget/NuGet/NuGet.Config"
