@@ -30,7 +30,9 @@ let keyword s =
     | "true"    -> CSTBOOL 1
     | "void"    -> VOID 
     | "while"   -> WHILE 
-    | "for"     -> FOR        
+    | "for"     -> FOR
+    | "switch"  -> SWITCH
+    | "case"    -> CASE
     | _         -> NAME s
  
 let cEscape s = 
@@ -46,7 +48,7 @@ let cEscape s =
     | "\\r"  -> '\r'
     | _      -> failwith "Lexer error: impossible C escape"
 
-# 49 "Lectures/Lec06/MicroC/CLex.fs"
+# 51 "Lectures/Lec06/MicroC/CLex.fs"
 let trans : uint16[] array = 
     [| 
     (* State 0 *)
@@ -182,288 +184,288 @@ let trans : uint16[] array =
     (* State 65 *)
      [| 65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65us;65us;65us;65us;65us;65us;65us;65us;65us;65us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;255us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|];
     |] 
-let actions : uint16[] = [|65535us;0us;3us;7us;4us;4us;5us;6us;7us;2us;1us;65535us;0us;1us;1us;2us;65535us;4us;4us;2us;3us;3us;4us;1us;0us;65535us;0us;1us;2us;3us;4us;5us;6us;7us;8us;9us;20us;12us;13us;14us;36us;19us;21us;22us;23us;24us;25us;26us;27us;28us;29us;32us;35us;36us;18us;17us;16us;15us;11us;10us;30us;31us;34us;33us;3us;2us;|]
+let actions : uint16[] = [|65535us;0us;3us;7us;4us;4us;5us;6us;7us;2us;1us;65535us;0us;1us;1us;2us;65535us;4us;4us;2us;3us;3us;4us;1us;0us;65535us;0us;1us;2us;3us;4us;5us;6us;7us;8us;10us;20us;12us;13us;14us;36us;19us;21us;22us;23us;24us;25us;26us;27us;28us;29us;32us;35us;36us;18us;17us;16us;15us;11us;9us;30us;31us;34us;33us;3us;2us;|]
 let _fslex_tables = FSharp.Text.Lexing.UnicodeTables.Create(trans,actions)
 let rec _fslex_dummy () = _fslex_dummy() 
 // Rule Token
 and Token  lexbuf =
   match _fslex_tables.Interpret(25,lexbuf) with
   | 0 -> ( 
-# 49 "Lectures/Lec06/MicroC/CLex.fsl"
+# 51 "Lectures/Lec06/MicroC/CLex.fsl"
                                      Token lexbuf 
-# 194 "Lectures/Lec06/MicroC/CLex.fs"
+# 196 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 1 -> ( 
-# 50 "Lectures/Lec06/MicroC/CLex.fsl"
+# 52 "Lectures/Lec06/MicroC/CLex.fsl"
                                      lexbuf.EndPos <- lexbuf.EndPos.NextLine; Token lexbuf 
-# 199 "Lectures/Lec06/MicroC/CLex.fs"
+# 201 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 2 -> ( 
-# 51 "Lectures/Lec06/MicroC/CLex.fsl"
+# 53 "Lectures/Lec06/MicroC/CLex.fsl"
                                      CSTINT (System.Int32.Parse (lexemeAsString lexbuf)) 
-# 204 "Lectures/Lec06/MicroC/CLex.fs"
+# 206 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 3 -> ( 
-# 53 "Lectures/Lec06/MicroC/CLex.fsl"
+# 55 "Lectures/Lec06/MicroC/CLex.fsl"
                                      keyword (lexemeAsString lexbuf) 
-# 209 "Lectures/Lec06/MicroC/CLex.fs"
+# 211 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 4 -> ( 
-# 54 "Lectures/Lec06/MicroC/CLex.fsl"
+# 56 "Lectures/Lec06/MicroC/CLex.fsl"
                                      PLUS 
-# 214 "Lectures/Lec06/MicroC/CLex.fs"
+# 216 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 5 -> ( 
-# 55 "Lectures/Lec06/MicroC/CLex.fsl"
+# 57 "Lectures/Lec06/MicroC/CLex.fsl"
                                      MINUS 
-# 219 "Lectures/Lec06/MicroC/CLex.fs"
+# 221 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 6 -> ( 
-# 56 "Lectures/Lec06/MicroC/CLex.fsl"
+# 58 "Lectures/Lec06/MicroC/CLex.fsl"
                                      TIMES 
-# 224 "Lectures/Lec06/MicroC/CLex.fs"
+# 226 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 7 -> ( 
-# 57 "Lectures/Lec06/MicroC/CLex.fsl"
+# 59 "Lectures/Lec06/MicroC/CLex.fsl"
                                      DIV 
-# 229 "Lectures/Lec06/MicroC/CLex.fs"
+# 231 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 8 -> ( 
-# 58 "Lectures/Lec06/MicroC/CLex.fsl"
+# 60 "Lectures/Lec06/MicroC/CLex.fsl"
                                      MOD 
-# 234 "Lectures/Lec06/MicroC/CLex.fs"
+# 236 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 9 -> ( 
-# 59 "Lectures/Lec06/MicroC/CLex.fsl"
-                                     ASSIGN 
-# 239 "Lectures/Lec06/MicroC/CLex.fs"
+# 61 "Lectures/Lec06/MicroC/CLex.fsl"
+                                     EQ 
+# 241 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 10 -> ( 
-# 60 "Lectures/Lec06/MicroC/CLex.fsl"
-                                     EQ 
-# 244 "Lectures/Lec06/MicroC/CLex.fs"
+# 62 "Lectures/Lec06/MicroC/CLex.fsl"
+                                     ASSIGN 
+# 246 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 11 -> ( 
-# 61 "Lectures/Lec06/MicroC/CLex.fsl"
+# 63 "Lectures/Lec06/MicroC/CLex.fsl"
                                      NE 
-# 249 "Lectures/Lec06/MicroC/CLex.fs"
+# 251 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 12 -> ( 
-# 62 "Lectures/Lec06/MicroC/CLex.fsl"
+# 64 "Lectures/Lec06/MicroC/CLex.fsl"
                                      QST 
-# 254 "Lectures/Lec06/MicroC/CLex.fs"
+# 256 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 13 -> ( 
-# 63 "Lectures/Lec06/MicroC/CLex.fsl"
+# 65 "Lectures/Lec06/MicroC/CLex.fsl"
                                      GT 
-# 259 "Lectures/Lec06/MicroC/CLex.fs"
+# 261 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 14 -> ( 
-# 64 "Lectures/Lec06/MicroC/CLex.fsl"
+# 66 "Lectures/Lec06/MicroC/CLex.fsl"
                                      LT 
-# 264 "Lectures/Lec06/MicroC/CLex.fs"
+# 266 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 15 -> ( 
-# 65 "Lectures/Lec06/MicroC/CLex.fsl"
+# 67 "Lectures/Lec06/MicroC/CLex.fsl"
                                      GE 
-# 269 "Lectures/Lec06/MicroC/CLex.fs"
+# 271 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 16 -> ( 
-# 66 "Lectures/Lec06/MicroC/CLex.fsl"
+# 68 "Lectures/Lec06/MicroC/CLex.fsl"
                                      LE 
-# 274 "Lectures/Lec06/MicroC/CLex.fs"
+# 276 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 17 -> ( 
-# 67 "Lectures/Lec06/MicroC/CLex.fsl"
+# 69 "Lectures/Lec06/MicroC/CLex.fsl"
                                      SEQOR 
-# 279 "Lectures/Lec06/MicroC/CLex.fs"
+# 281 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 18 -> ( 
-# 68 "Lectures/Lec06/MicroC/CLex.fsl"
+# 70 "Lectures/Lec06/MicroC/CLex.fsl"
                                      SEQAND 
-# 284 "Lectures/Lec06/MicroC/CLex.fs"
+# 286 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 19 -> ( 
-# 69 "Lectures/Lec06/MicroC/CLex.fsl"
+# 71 "Lectures/Lec06/MicroC/CLex.fsl"
                                      AMP 
-# 289 "Lectures/Lec06/MicroC/CLex.fs"
+# 291 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 20 -> ( 
-# 70 "Lectures/Lec06/MicroC/CLex.fsl"
+# 72 "Lectures/Lec06/MicroC/CLex.fsl"
                                      NOT 
-# 294 "Lectures/Lec06/MicroC/CLex.fs"
+# 296 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 21 -> ( 
-# 71 "Lectures/Lec06/MicroC/CLex.fsl"
+# 73 "Lectures/Lec06/MicroC/CLex.fsl"
                                      LPAR 
-# 299 "Lectures/Lec06/MicroC/CLex.fs"
+# 301 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 22 -> ( 
-# 72 "Lectures/Lec06/MicroC/CLex.fsl"
+# 74 "Lectures/Lec06/MicroC/CLex.fsl"
                                      RPAR 
-# 304 "Lectures/Lec06/MicroC/CLex.fs"
+# 306 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 23 -> ( 
-# 73 "Lectures/Lec06/MicroC/CLex.fsl"
+# 75 "Lectures/Lec06/MicroC/CLex.fsl"
                                      LBRACE 
-# 309 "Lectures/Lec06/MicroC/CLex.fs"
+# 311 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 24 -> ( 
-# 74 "Lectures/Lec06/MicroC/CLex.fsl"
+# 76 "Lectures/Lec06/MicroC/CLex.fsl"
                                      RBRACE 
-# 314 "Lectures/Lec06/MicroC/CLex.fs"
+# 316 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 25 -> ( 
-# 75 "Lectures/Lec06/MicroC/CLex.fsl"
+# 77 "Lectures/Lec06/MicroC/CLex.fsl"
                                      LBRACK 
-# 319 "Lectures/Lec06/MicroC/CLex.fs"
+# 321 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 26 -> ( 
-# 76 "Lectures/Lec06/MicroC/CLex.fsl"
+# 78 "Lectures/Lec06/MicroC/CLex.fsl"
                                      RBRACK 
-# 324 "Lectures/Lec06/MicroC/CLex.fs"
+# 326 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 27 -> ( 
-# 77 "Lectures/Lec06/MicroC/CLex.fsl"
+# 79 "Lectures/Lec06/MicroC/CLex.fsl"
                                      SEMI 
-# 329 "Lectures/Lec06/MicroC/CLex.fs"
+# 331 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 28 -> ( 
-# 78 "Lectures/Lec06/MicroC/CLex.fsl"
+# 80 "Lectures/Lec06/MicroC/CLex.fsl"
                                      COLON 
-# 334 "Lectures/Lec06/MicroC/CLex.fs"
+# 336 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 29 -> ( 
-# 79 "Lectures/Lec06/MicroC/CLex.fsl"
+# 81 "Lectures/Lec06/MicroC/CLex.fsl"
                                      COMMA 
-# 339 "Lectures/Lec06/MicroC/CLex.fs"
+# 341 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 30 -> ( 
-# 80 "Lectures/Lec06/MicroC/CLex.fsl"
+# 82 "Lectures/Lec06/MicroC/CLex.fsl"
                                      EndLineComment lexbuf; Token lexbuf 
-# 344 "Lectures/Lec06/MicroC/CLex.fs"
+# 346 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 31 -> ( 
-# 81 "Lectures/Lec06/MicroC/CLex.fsl"
+# 83 "Lectures/Lec06/MicroC/CLex.fsl"
                                      Comment lexbuf; Token lexbuf 
-# 349 "Lectures/Lec06/MicroC/CLex.fs"
+# 351 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 32 -> ( 
-# 82 "Lectures/Lec06/MicroC/CLex.fsl"
+# 84 "Lectures/Lec06/MicroC/CLex.fsl"
                                      CSTSTRING (String [] lexbuf) 
-# 354 "Lectures/Lec06/MicroC/CLex.fs"
+# 356 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 33 -> ( 
-# 83 "Lectures/Lec06/MicroC/CLex.fsl"
+# 85 "Lectures/Lec06/MicroC/CLex.fsl"
                                      INCREMENT 
-# 359 "Lectures/Lec06/MicroC/CLex.fs"
+# 361 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 34 -> ( 
-# 84 "Lectures/Lec06/MicroC/CLex.fsl"
+# 86 "Lectures/Lec06/MicroC/CLex.fsl"
                                      DECREMENT 
-# 364 "Lectures/Lec06/MicroC/CLex.fs"
+# 366 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 35 -> ( 
-# 85 "Lectures/Lec06/MicroC/CLex.fsl"
+# 87 "Lectures/Lec06/MicroC/CLex.fsl"
                                      EOF 
-# 369 "Lectures/Lec06/MicroC/CLex.fs"
+# 371 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 36 -> ( 
-# 86 "Lectures/Lec06/MicroC/CLex.fsl"
+# 88 "Lectures/Lec06/MicroC/CLex.fsl"
                                      failwith "Lexer error: illegal symbol" 
-# 374 "Lectures/Lec06/MicroC/CLex.fs"
+# 376 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | _ -> failwith "Token"
 // Rule Comment
 and Comment  lexbuf =
   match _fslex_tables.Interpret(16,lexbuf) with
   | 0 -> ( 
-# 89 "Lectures/Lec06/MicroC/CLex.fsl"
+# 91 "Lectures/Lec06/MicroC/CLex.fsl"
                                      Comment lexbuf; Comment lexbuf 
-# 383 "Lectures/Lec06/MicroC/CLex.fs"
+# 385 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 1 -> ( 
-# 90 "Lectures/Lec06/MicroC/CLex.fsl"
+# 92 "Lectures/Lec06/MicroC/CLex.fsl"
                                      () 
-# 388 "Lectures/Lec06/MicroC/CLex.fs"
+# 390 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 2 -> ( 
-# 91 "Lectures/Lec06/MicroC/CLex.fsl"
+# 93 "Lectures/Lec06/MicroC/CLex.fsl"
                                      lexbuf.EndPos <- lexbuf.EndPos.NextLine; Comment lexbuf 
-# 393 "Lectures/Lec06/MicroC/CLex.fs"
+# 395 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 3 -> ( 
-# 92 "Lectures/Lec06/MicroC/CLex.fsl"
+# 94 "Lectures/Lec06/MicroC/CLex.fsl"
                                      failwith "Lexer error: unterminated comment" 
-# 398 "Lectures/Lec06/MicroC/CLex.fs"
+# 400 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 4 -> ( 
-# 93 "Lectures/Lec06/MicroC/CLex.fsl"
+# 95 "Lectures/Lec06/MicroC/CLex.fsl"
                                      Comment lexbuf 
-# 403 "Lectures/Lec06/MicroC/CLex.fs"
+# 405 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | _ -> failwith "Comment"
 // Rule EndLineComment
 and EndLineComment  lexbuf =
   match _fslex_tables.Interpret(11,lexbuf) with
   | 0 -> ( 
-# 96 "Lectures/Lec06/MicroC/CLex.fsl"
+# 98 "Lectures/Lec06/MicroC/CLex.fsl"
                                      lexbuf.EndPos <- lexbuf.EndPos.NextLine 
-# 412 "Lectures/Lec06/MicroC/CLex.fs"
+# 414 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 1 -> ( 
-# 97 "Lectures/Lec06/MicroC/CLex.fsl"
+# 99 "Lectures/Lec06/MicroC/CLex.fsl"
                                      () 
-# 417 "Lectures/Lec06/MicroC/CLex.fs"
+# 419 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 2 -> ( 
-# 98 "Lectures/Lec06/MicroC/CLex.fsl"
+# 100 "Lectures/Lec06/MicroC/CLex.fsl"
                                      EndLineComment lexbuf 
-# 422 "Lectures/Lec06/MicroC/CLex.fs"
+# 424 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | _ -> failwith "EndLineComment"
 // Rule String
 and String chars lexbuf =
   match _fslex_tables.Interpret(0,lexbuf) with
   | 0 -> ( 
-# 102 "Lectures/Lec06/MicroC/CLex.fsl"
+# 104 "Lectures/Lec06/MicroC/CLex.fsl"
                        Microsoft.FSharp.Core.String.concat "" (List.map string (List.rev chars)) 
-# 431 "Lectures/Lec06/MicroC/CLex.fs"
+# 433 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 1 -> ( 
-# 104 "Lectures/Lec06/MicroC/CLex.fsl"
+# 106 "Lectures/Lec06/MicroC/CLex.fsl"
                        String (cEscape (lexemeAsString lexbuf) :: chars) lexbuf 
-# 436 "Lectures/Lec06/MicroC/CLex.fs"
+# 438 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 2 -> ( 
-# 106 "Lectures/Lec06/MicroC/CLex.fsl"
+# 108 "Lectures/Lec06/MicroC/CLex.fsl"
                        String ('\'' :: chars) lexbuf 
-# 441 "Lectures/Lec06/MicroC/CLex.fs"
+# 443 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 3 -> ( 
-# 108 "Lectures/Lec06/MicroC/CLex.fsl"
+# 110 "Lectures/Lec06/MicroC/CLex.fsl"
                        failwith "Lexer error: illegal escape sequence" 
-# 446 "Lectures/Lec06/MicroC/CLex.fs"
+# 448 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 4 -> ( 
-# 110 "Lectures/Lec06/MicroC/CLex.fsl"
+# 112 "Lectures/Lec06/MicroC/CLex.fsl"
                        failwith "Lexer error: unterminated string" 
-# 451 "Lectures/Lec06/MicroC/CLex.fs"
+# 453 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 5 -> ( 
-# 112 "Lectures/Lec06/MicroC/CLex.fsl"
+# 114 "Lectures/Lec06/MicroC/CLex.fsl"
                        failwith "Lexer error: newline in string" 
-# 456 "Lectures/Lec06/MicroC/CLex.fs"
+# 458 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 6 -> ( 
-# 114 "Lectures/Lec06/MicroC/CLex.fsl"
+# 116 "Lectures/Lec06/MicroC/CLex.fsl"
                        failwith "Lexer error: invalid character in string" 
-# 461 "Lectures/Lec06/MicroC/CLex.fs"
+# 463 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | 7 -> ( 
-# 116 "Lectures/Lec06/MicroC/CLex.fsl"
+# 118 "Lectures/Lec06/MicroC/CLex.fsl"
                        String (char (lexbuf.LexemeChar 0) :: chars) lexbuf 
-# 466 "Lectures/Lec06/MicroC/CLex.fs"
+# 468 "Lectures/Lec06/MicroC/CLex.fs"
           )
   | _ -> failwith "String"
 

@@ -23,6 +23,7 @@ let nl = CstI 10
 
 %right ASSIGN             /* lowest precedence */
 %nonassoc PRINT
+%left QST COLON
 %left SEQOR
 %left SEQAND
 %left EQ NE 
@@ -99,6 +100,7 @@ Stmt:
 ;
 
 Cases: 
+    /* empty */                         { [] }
   | CASE Expr COLON Stmt Cases          { ( $2, $4 ) :: $5 }
   | CASE Expr COLON Stmt                { ( $2, $4 ) :: [] }
   ;
@@ -107,7 +109,7 @@ StmtM:  /* No unbalanced if-else */
     Expr SEMI                           { Expr($1)             }
   | RETURN SEMI                         { Return None          }
   | RETURN Expr SEMI                    { Return(Some($2))     }
-  | SWITCH Expr Cases                   { Switch($2, $3)       }
+  | SWITCH LPAR Expr RPAR LBRACE Cases RBRACE { Switch($3, $6)       }
   | Block                               { $1                   }
   | IF LPAR Expr RPAR StmtM ELSE StmtM  { If($3, $5, $7)       }
   | WHILE LPAR Expr RPAR StmtM          { While($3, $5)        }

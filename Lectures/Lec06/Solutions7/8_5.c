@@ -1,8 +1,8 @@
-void main(){
+void main(int x){
 
-    (1==1 ? print 10 : print 20);
+    (0==0 ? print 10 : print 20);
 
-    switch(2){
+    switch(x){
         case 1:
             print 100;
         case 2:

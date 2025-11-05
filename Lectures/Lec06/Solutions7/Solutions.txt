@@ -372,3 +372,61 @@ Label "L3";
     IFNZRO "L2"; 
     INCSP -1; 
     RET 0]
+
+    [LDARGS; CALL (1, "L1"); STOP;
+   
+    Label "L1";
+        CSTI 1;
+        CSTI 1;
+        IFZERO "L2";
+        CSTI 10;
+        PRINTI;
+        GOTO "L3";
+    
+    Label "L2";
+        CSTI 20;
+        PRINTI;
+    
+    Label "L3";
+        EQ;
+        INCSP -1;
+        GETBP;
+        CSTI 0;
+        ADD;
+        LDI;
+        DUP;
+        CSTI 1;
+        EQ;
+        IFNZRO "L5";
+        DUP;
+        CSTI 2;
+        EQ;
+        IFNZRO "L6";
+        DUP;
+        CSTI 3;
+        EQ;
+        IFNZRO "L7";
+        GOTO "L4";
+    
+    Label "L5";
+        CSTI 100;
+        PRINTI;
+        INCSP -1;
+        GOTO "L4";
+    
+    Label "L6";
+        CSTI 200;
+        PRINTI;
+        INCSP -1;
+        GOTO "L4";
+    
+    Label "L7";
+        CSTI 300;
+        PRINTI;
+        INCSP -1;
+        GOTO "L4";
+    
+    Label "L4";
+        INCSP -1;
+        INCSP 0;
+        RET 0]

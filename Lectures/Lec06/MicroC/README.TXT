@@ -29,6 +29,7 @@ B. To compile and use the micro-C compiler
    compileToFile (fromFile "ex11.c") "ex11.out";;
    compile "ex11";;
 
+compile "../Solutions7/8_5";;
 The Java stack machine:
 
    javac Machine.java

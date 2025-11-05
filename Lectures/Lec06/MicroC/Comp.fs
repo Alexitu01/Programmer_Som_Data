@@ -123,16 +123,6 @@ let rec cStmt stmt (varEnv : varEnv) (funEnv : funEnv) : instr list =
       @ cStmt stmt1 varEnv funEnv @ [GOTO labend]
       @ [Label labelse] @ cStmt stmt2 varEnv funEnv
       @ [Label labend]
-    | Ternary (e1, e2, e3) ->
-      let labelse = newLabel()
-      let labend  = newLabel()
-      cExpr e1 varEnv funEnv
-      @ [IFZERO labelse]
-      @ cExpr e2 varEnv funEnv
-      @ [GOTO labend]
-      @ [Label labelse]
-      @ cExpr e3 varEnv funEnv
-      @ [Label labend]
     | While(e, body) ->
       let labbegin = newLabel()
       let labtest  = newLabel()
@@ -163,15 +153,15 @@ let rec cStmt stmt (varEnv : varEnv) (funEnv : funEnv) : instr list =
         List.concat
           (List.map2
             (fun caseExpr caseLabel ->
-              cExpr caseExpr varEnv funEnv @ [IFNZRO caseLabel])
+              [DUP] @ cExpr caseExpr varEnv funEnv @ [EQ] @ [IFNZRO caseLabel])
             caseExprs caseLabels)
       let BodyTabel = (List.concat
            (List.map2
               (fun caseLabel caseBody ->
-                 [Label caseLabel] @ cStmt caseBody varEnv funEnv)
+                 [Label caseLabel] @ cStmt caseBody varEnv funEnv @ [GOTO labend])
               caseLabels caseBodies))
       
-      cExpr e varEnv funEnv @ LabelTabel @ [GOTO labend] @ BodyTabel @ [Label labend]
+      cExpr e varEnv funEnv @ LabelTabel @ [GOTO labend] @ BodyTabel @ [Label labend] @ [INCSP -1]
       
       
 
@@ -241,6 +231,15 @@ and cExpr (e : expr) (varEnv : varEnv) (funEnv : funEnv) : instr list =
       cAccess acc varEnv funEnv @ [DUP; LDI; CSTI 1; ADD; STI]
     | PreDec acc ->
       cAccess acc varEnv funEnv @ [DUP; LDI; CSTI 1; SUB; STI]
+    | Ternary (e1, e2, e3) ->
+      let labelse = newLabel()
+      let labend  = newLabel()
+      cExpr e1 varEnv funEnv @ [IFZERO labelse]
+      @ cExpr e2 varEnv funEnv
+      @ [GOTO labend]
+      @ [Label labelse]
+      @ cExpr e3 varEnv funEnv
+      @ [Label labend]
 
 
 (* Generate code to access variable, dereference pointer or index array.
