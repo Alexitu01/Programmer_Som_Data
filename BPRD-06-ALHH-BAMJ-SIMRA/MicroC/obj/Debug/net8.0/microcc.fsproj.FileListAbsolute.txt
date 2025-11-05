@@ -1,0 +1,4 @@
+/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/Lectures/Lec06/MicroC/obj/Debug/net8.0/microcc.AssemblyInfoInputs.cache
+/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/Lectures/Lec06/MicroC/obj/Debug/net8.0/microcc.AssemblyInfo.fs
+/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/BPRD-06-ALHH-BAMJ-SIMRA/MicroC/obj/Debug/net8.0/microcc.AssemblyInfoInputs.cache
+/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/BPRD-06-ALHH-BAMJ-SIMRA/MicroC/obj/Debug/net8.0/microcc.AssemblyInfo.fs

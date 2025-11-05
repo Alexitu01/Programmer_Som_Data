@@ -122,7 +122,7 @@ let rec cStmt stmt (varEnv : varEnv) (funEnv : funEnv) : instr list =
       cExpr e varEnv funEnv @ [IFZERO labelse] 
       @ cStmt stmt1 varEnv funEnv @ [GOTO labend]
       @ [Label labelse] @ cStmt stmt2 varEnv funEnv
-      @ [Label labend]           
+      @ [Label labend]
     | While(e, body) ->
       let labbegin = newLabel()
       let labtest  = newLabel()
@@ -144,6 +144,27 @@ let rec cStmt stmt (varEnv : varEnv) (funEnv : funEnv) : instr list =
       [RET (snd varEnv - 1)]
     | Return (Some e) -> 
       cExpr e varEnv funEnv @ [RET (snd varEnv)]
+    | Switch (e, caseStmts) ->
+      let labend = newLabel()
+      let caseLabels = List.map (fun _ -> newLabel()) caseStmts
+      let caseExprs = List.map fst caseStmts
+      let caseBodies = List.map snd caseStmts
+      let LabelTabel =
+        List.concat
+          (List.map2
+            (fun caseExpr caseLabel ->
+              [DUP] @ cExpr caseExpr varEnv funEnv @ [EQ] @ [IFNZRO caseLabel])
+            caseExprs caseLabels)
+      let BodyTabel = (List.concat
+           (List.map2
+              (fun caseLabel caseBody ->
+                 [Label caseLabel] @ cStmt caseBody varEnv funEnv @ [GOTO labend])
+              caseLabels caseBodies))
+      
+      cExpr e varEnv funEnv @ LabelTabel @ [GOTO labend] @ BodyTabel @ [Label labend] @ [INCSP -1]
+      
+      
+
 
 and cStmtOrDec stmtOrDec (varEnv : varEnv) (funEnv : funEnv) : varEnv * instr list = 
     match stmtOrDec with 
@@ -206,6 +227,20 @@ and cExpr (e : expr) (varEnv : varEnv) (funEnv : funEnv) : instr list =
       @ cExpr e2 varEnv funEnv
       @ [GOTO labend; Label labtrue; CSTI 1; Label labend]
     | Call(f, es) -> callfun f es varEnv funEnv
+    | PreInc acc ->
+      cAccess acc varEnv funEnv @ [DUP; LDI; CSTI 1; ADD; STI]
+    | PreDec acc ->
+      cAccess acc varEnv funEnv @ [DUP; LDI; CSTI 1; SUB; STI]
+    | Ternary (e1, e2, e3) ->
+      let labelse = newLabel()
+      let labend  = newLabel()
+      cExpr e1 varEnv funEnv @ [IFZERO labelse]
+      @ cExpr e2 varEnv funEnv
+      @ [GOTO labend]
+      @ [Label labelse]
+      @ cExpr e3 varEnv funEnv
+      @ [Label labend]
+
 
 (* Generate code to access variable, dereference pointer or index array.
    The effect of the compiled code is to leave an lvalue on the stack.   *)

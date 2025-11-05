@@ -12,6 +12,8 @@ type token =
   | COMMA
   | ASSIGN
   | AMP
+  | COLON
+  | QST
   | NOT
   | SEQOR
   | SEQAND
@@ -26,6 +28,8 @@ type token =
   | TIMES
   | DIV
   | MOD
+  | INCREMENT
+  | DECREMENT
   | CHAR
   | ELSE
   | IF
@@ -37,6 +41,8 @@ type token =
   | VOID
   | WHILE
   | FOR
+  | SWITCH
+  | CASE
   | CSTSTRING of (string)
   | NAME of (string)
   | CSTINT of (int)
@@ -53,6 +59,8 @@ type tokenId =
     | TOKEN_COMMA
     | TOKEN_ASSIGN
     | TOKEN_AMP
+    | TOKEN_COLON
+    | TOKEN_QST
     | TOKEN_NOT
     | TOKEN_SEQOR
     | TOKEN_SEQAND
@@ -67,6 +75,8 @@ type tokenId =
     | TOKEN_TIMES
     | TOKEN_DIV
     | TOKEN_MOD
+    | TOKEN_INCREMENT
+    | TOKEN_DECREMENT
     | TOKEN_CHAR
     | TOKEN_ELSE
     | TOKEN_IF
@@ -78,6 +88,8 @@ type tokenId =
     | TOKEN_VOID
     | TOKEN_WHILE
     | TOKEN_FOR
+    | TOKEN_SWITCH
+    | TOKEN_CASE
     | TOKEN_CSTSTRING
     | TOKEN_NAME
     | TOKEN_CSTINT
@@ -98,6 +110,7 @@ type nonTerminalId =
     | NONTERM_StmtOrDecSeq
     | NONTERM_StmtOrDec
     | NONTERM_Stmt
+    | NONTERM_Cases
     | NONTERM_StmtM
     | NONTERM_StmtU
     | NONTERM_Expr

@@ -1,0 +1,37 @@
+Exercise 7.1
+=================================================================================== 
+  Prog
+    [Fundec
+       (None, "main", [(TypI, "n")],
+        Block
+          [Stmt
+             (While
+                (Prim2 (">", Access (AccVar "n"), CstI 0),
+                 Block
+                   [Stmt (Expr (Prim1 ("printi", Access (AccVar "n"))));
+                    Stmt
+                      (Expr
+                         (Assign
+                            (AccVar "n",
+                             Prim2 ("-", Access (AccVar "n"), CstI 1))))]));
+           Stmt (Expr (Prim1 ("printc", CstI 10)))])]
+
+
+Here are the annotated parts:
+    Expressions
+        Prim1 ("printi", Access (AccVar "n"))
+        Prim2 ("-", Access (AccVar "n"), CstI 1)
+        Prim2 (">", Access (AccVar "n"), CstI 0)
+    
+    Statements
+        Stmt (Expr (Prim1 ("printi" (...))))
+        Stmt (Expr (Prim1 ("printc" (...))))
+        Stmt (Expr (Assign (...)))
+        Stmt (While (...))
+    
+    Types
+        CstI 
+        AccVar
+    
+    Declarations
+        Fundec (None, "main", [(TypI, "n")], ...)
