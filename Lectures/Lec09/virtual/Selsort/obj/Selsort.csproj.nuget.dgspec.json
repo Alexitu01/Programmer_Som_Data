@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nh/Library/CloudStorage/Dropbox/Documents/Work/ITU/Course/BPRD-E2024/Lectures/Lec07/virtual/Selsort/Selsort.csproj": {}
+    "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\Lectures\\Lec09\\virtual\\Selsort\\Selsort.csproj": {}
   },
   "projects": {
-    "/Users/nh/Library/CloudStorage/Dropbox/Documents/Work/ITU/Course/BPRD-E2024/Lectures/Lec07/virtual/Selsort/Selsort.csproj": {
+    "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\Lectures\\Lec09\\virtual\\Selsort\\Selsort.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nh/Library/CloudStorage/Dropbox/Documents/Work/ITU/Course/BPRD-E2024/Lectures/Lec07/virtual/Selsort/Selsort.csproj",
+        "projectUniqueName": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\Lectures\\Lec09\\virtual\\Selsort\\Selsort.csproj",
         "projectName": "Selsort",
-        "projectPath": "/Users/nh/Library/CloudStorage/Dropbox/Documents/Work/ITU/Course/BPRD-E2024/Lectures/Lec07/virtual/Selsort/Selsort.csproj",
-        "packagesPath": "/Users/nh/.nuget/packages/",
-        "outputPath": "/Users/nh/Library/CloudStorage/Dropbox/Documents/Work/ITU/Course/BPRD-E2024/Lectures/Lec07/virtual/Selsort/obj/",
+        "projectPath": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\Lectures\\Lec09\\virtual\\Selsort\\Selsort.csproj",
+        "packagesPath": "C:\\Users\\simun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\simun\\Desktop\\Simun\\ITU\\Programmer_Som_Data\\Lectures\\Lec09\\virtual\\Selsort\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/nh/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\simun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -58,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
