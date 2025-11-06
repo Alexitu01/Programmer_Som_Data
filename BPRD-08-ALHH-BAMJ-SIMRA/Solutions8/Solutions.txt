@@ -1,0 +1,176 @@
+9.1 (i)
+
+	.method public hidebysig static 
+		void SelectionSort (
+			int32[] arr
+		) cil managed 
+	{
+		// Method begins at RVA 0x20cc
+		// Header size: 12
+		// Code size: 78 (0x4e)
+		.maxstack 4
+		.locals init (
+			[0] int32,
+			[1] int32,
+			[2] int32,
+			[3] int32,
+			[4] bool,
+			[5] bool,
+			[6] bool
+		)
+
+		IL_0000: nop
+		IL_0001: ldc.i4.0       --> load int "0"
+		IL_0002: stloc.0        --> i = 0
+		IL_0003: br.s IL_0041   --> 
+                                            ** Defines i = 0 **       
+		// loop start (head: IL_0041)
+			IL_0005: nop 
+			IL_0006: ldloc.0
+			IL_0007: stloc.1
+                                            ** Defines least = i **
+			IL_0008: ldloc.0
+			IL_0009: ldc.i4.1
+			IL_000a: add
+			IL_000b: stloc.3
+                                            ** Defines j = i + 1 **
+			IL_000c: br.s IL_0022  
+			// loop start (head: IL_0022)
+				IL_000e: ldarg.0           
+				IL_000f: ldloc.3
+				IL_0010: ldelem.i4
+				IL_0011: ldarg.0
+				IL_0012: ldloc.1
+				IL_0013: ldelem.i4
+				IL_0014: clt
+				IL_0016: stloc.s 4
+				IL_0018: ldloc.s 4
+				IL_001a: brfalse.s IL_001e
+                                            ** Looks at arr[j] < arr[least] **
+				IL_001c: ldloc.3
+				IL_001d: stloc.1
+                                            ** If above check is true: least = j **
+				IL_001e: ldloc.3
+				IL_001f: ldc.i4.1
+				IL_0020: add
+				IL_0021: stloc.3
+                                            ** Increments j -> j++ ** 
+				IL_0022: ldloc.3
+				IL_0023: ldarg.0
+				IL_0024: ldlen
+				IL_0025: conv.i4
+				IL_0026: clt
+				IL_0028: stloc.s 5
+				IL_002a: ldloc.s 5
+				IL_002c: brtrue.s IL_000e
+                                            ** Checks for-loop condition -> break if false, loop if true **
+			// end loop
+
+			IL_002e: ldarg.0.   --> load array
+			IL_002f: ldloc.0    --> load i
+			IL_0030: ldelem.i4  --> load arr[i]
+			IL_0031: stloc.2    --> store arr[i] as tmp
+                                                ** tmp = arr[i] **
+			IL_0032: ldarg.0    --> load array
+			IL_0033: ldloc.0    --> load i
+			IL_0034: ldarg.0    --> load array 
+			IL_0035: ldloc.1    --> load "least"
+			IL_0036: ldelem.i4  --> load arr[least]
+			IL_0037: stelem.i4  --> store arr[least] in arr[i]
+                                                ** arr[i] = arr[least] ** 
+			IL_0038: ldarg.0	--> load array
+			IL_0039: ldloc.1	--> load least
+			IL_003a: ldloc.2 	--> load tmp
+			IL_003b: stelem.i4  --> store tmp in arr[least]
+			IL_003c: nop		--> DeathCode 
+			IL_003d: ldloc.0    --> load i
+			IL_003e: ldc.i4.1   --> load int 1
+			IL_003f: add        --> i+1 
+			IL_0040: stloc.0    --> store i+1
+                                            **  arr[least] = tmp **
+			IL_0041: ldloc.0.   --> load i
+			IL_0042: ldarg.0    --> load array
+			IL_0043: ldlen      --> calculate array.Length
+			IL_0044: conv.i4    --> convert to signed integer
+			IL_0045: clt        --> Compare less than (i < arr.Length)
+			IL_0047: stloc.s 6  --> store boolean
+			IL_0049: ldloc.s 6  --> load boolean
+			IL_004b: brtrue.s IL_0005   --> if true - loop.
+		// end loop
+
+		IL_004d: ret            --> return
+	} // end of method Selsort::SelectionSort
+
+
+
+public static void SelectionSort(int[]);
+    descriptor: ([I)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+    stack=4, locals=4, args_size=1
+       0: iconst_0    	    --> Const "0"
+       1: istore_1   	 	    --> i = 0
+       2: iload_1     	    --> load i
+       3: aload_0     	    --> load array
+       4: arraylength 	    --> calculate array length
+       5: if_icmpge     57    --> if i ≥ array jump to 57 
+       8: iload_1             --> load i
+       9: istore_2            --> least = i
+      10: iload_1             --> load i
+      11: iconst_1            --> Const "1"
+      12: iadd                --> i+1
+      13: istore_3            --> j = i+1
+      14: iload_3             --> load j
+      15: aload_0             --> load array
+      16: arraylength         --> compute array length
+      17: if_icmpge     37    --> if j ≥ array jump to 37
+      20: aload_0             --> load array
+      21: iload_3             --> load j
+      22: iaload              --> load arr[j]
+      23: aload_0             --> load array
+      24: iload_2             --> load least
+      25: iaload              --> load arr[least]
+      26: if_icmpge     31    --> if arr[j] ≥ arr[least] jump to 31
+      29: iload_3             --> load j
+      30: istore_2            --> least = j
+      31: iinc          3, 1  --> j++
+      34: goto          14    --> go to inner for-loop conditional
+      37: aload_0             --> load array
+      38: iload_1             --> load i
+      39: iaload              --> load arr[i]
+      40: istore_3            --> tmp = arr[i] //recycled @3
+      41: aload_0             --> load array
+      42: iload_1             --> load i
+      43: aload_0             --> load array
+      44: iload_2             --> load least
+      45: iaload              --> load arr[least]
+      46: iastore             --> arr[i] = arr[least]
+      47: aload_0             --> load array
+      48: iload_2             --> load least
+      49: iload_3             --> load tmp
+      50: iastore             --> arr[least] = tmp
+      51: iinc          1, 1  --> i++
+      54: goto          2   --> go to outer for-loop conditional
+      57: return             --> return :3
+    LineNumberTable:
+      line 21: 0
+      line 22: 8
+      line 23: 10
+      line 24: 20
+      line 25: 29
+      line 23: 31
+      line 26: 37
+      line 21: 51
+      line 28: 57
+    StackMapTable: number_of_entries = 5
+      frame_type = 252 /* append */
+        offset_delta = 2
+        locals = [ int ]
+      frame_type = 253 /* append */
+        offset_delta = 11
+        locals = [ int, int ]
+      frame_type = 16 /* same */
+      frame_type = 250 /* chop */
+        offset_delta = 5
+      frame_type = 249 /* chop */
+        offset_delta = 19
