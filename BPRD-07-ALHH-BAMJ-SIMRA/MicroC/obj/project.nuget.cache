@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vryoAgzvjNE=",
+  "dgSpecHash": "Fjyoqx4JtSg=",
   "success": true,
-  "projectFilePath": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/Lectures/Lec06/MicroC/microcc.fsproj",
+  "projectFilePath": "/Users/alexholst/Desktop/ITU Years/Third year/Programmer som Data/Programmer_Som_Data/BPRD-07-ALHH-BAMJ-SIMRA/MicroC/microcc.fsproj",
   "expectedPackageFiles": [
     "/Users/alexholst/.nuget/packages/fsharp.core/9.0.201/fsharp.core.9.0.201.nupkg.sha512",
     "/Users/alexholst/.nuget/packages/microsoft.netcore.app.ref/8.0.13/microsoft.netcore.app.ref.8.0.13.nupkg.sha512",
